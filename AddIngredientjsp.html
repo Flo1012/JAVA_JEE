@@ -1,0 +1,111 @@
+﻿<html>
+	
+<head>
+	<title>AddIngredient.jsp</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("AddIngredientjsp");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">AddIngredient.jsp</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="ProjetCocktailavecBDD.html">Projet Cocktail avec BDD</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="ProjetCocktailavecBDD.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="IngredientServicejava1.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Ingredientjsp1.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts23">&lt;%@</span><span class="rvts19"> </span><span class="rvts24">page</span><span class="rvts19"> </span><span class="rvts25">language</span><span class="rvts18">=</span><span class="rvts26">"java"</span><span class="rvts19"> </span><span class="rvts25">contentType</span><span class="rvts18">=</span><span class="rvts26">"text/html; charset=UTF-8"</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">pageEncoding</span><span class="rvts18">=</span><span class="rvts26">"UTF-8"</span><span class="rvts23">%&gt;</span></p>
+<p class="rvps2"><span class="rvts23">&lt;%@</span><span class="rvts19"> </span><span class="rvts24">taglib</span><span class="rvts19"> </span><span class="rvts25">prefix</span><span class="rvts18">=</span><span class="rvts26">"c"</span><span class="rvts19"> </span><span class="rvts25">uri</span><span class="rvts18">=</span><span class="rvts26">"http://java.sun.com/jsp/jstl/core"</span><span class="rvts23">%&gt;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts28">&lt;!</span><span class="rvts24">DOCTYPE</span><span class="rvts19"> </span><span class="rvts28">html</span><span class="rvts19"> </span><span class="rvts46">PUBLIC</span><span class="rvts19"> </span><span class="rvts28">"-//W3C//DTD HTML 4.01 Transitional//EN"</span><span class="rvts19"> </span><span class="rvts42">"http://www.w3.org/TR/html4/loose.dtd"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">html</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">head</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">meta</span><span class="rvts19"> </span><span class="rvts25">http-equiv</span><span class="rvts18">=</span><span class="rvts26">"Content-Type"</span><span class="rvts19"> </span><span class="rvts25">content</span><span class="rvts18">=</span><span class="rvts26">"text/html; charset=UTF-8"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">title</span><span class="rvts28">&gt;</span><span class="rvts18">Ajout d'un ingrédient</span><span class="rvts28">&lt;/</span><span class="rvts24">title</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">head</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">body</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">h1</span><span class="rvts28">&gt;</span><span class="rvts18">AJOUT D'UN INGREDIENT</span><span class="rvts28">&lt;/</span><span class="rvts24">h1</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">c:url</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"/ingredients/add.html"</span><span class="rvts19"> </span><span class="rvts25">var</span><span class="rvts18">=</span><span class="rvts26">"addUrl"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">form</span><span class="rvts19"> </span><span class="rvts25">action</span><span class="rvts18">=</span><span class="rvts26">"</span><span class="rvts18">${addUrl}</span><span class="rvts26">"</span><span class="rvts19"> &nbsp;</span><span class="rvts25">method</span><span class="rvts18">=</span><span class="rvts26">"POST"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">label</span><span class="rvts19"> </span><span class="rvts25">for</span><span class="rvts18">=</span><span class="rvts26">"name"</span><span class="rvts28">&gt;</span><span class="rvts18">Nom : </span><span class="rvts28">&lt;/</span><span class="rvts24">label</span><span class="rvts28">&gt;</span><span class="rvts18"> </span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">input</span><span class="rvts19"> </span><span class="rvts25">id</span><span class="rvts18">=</span><span class="rvts26">"name"</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"name"</span><span class="rvts19"> </span><span class="rvts25">class</span><span class="rvts18">=</span><span class="rvts26">"form-control"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">label</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">for</span><span class="rvts18">=</span><span class="rvts26">"state"</span><span class="rvts28">&gt;</span><span class="rvts18">Etat : </span><span class="rvts28">&lt;/</span><span class="rvts24">label</span><span class="rvts28">&gt;</span><span class="rvts18"> </span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">input</span><span class="rvts19"> </span><span class="rvts25">id</span><span class="rvts18">=</span><span class="rvts26">"state"</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"state"</span><span class="rvts19"> </span><span class="rvts25">type</span><span class="rvts18">=</span><span class="rvts56">"number"</span><span class="rvts19"> </span><span class="rvts57">min</span><span class="rvts18">=</span><span class="rvts26">"0"</span><span class="rvts19"> </span><span class="rvts57">max</span><span class="rvts18">=</span><span class="rvts26">"2"</span><span class="rvts19"> </span><span class="rvts25">class</span><span class="rvts18">=</span><span class="rvts26">"form-control"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">button</span><span class="rvts28">&gt;</span><span class="rvts18">VALIDER</span><span class="rvts28">&lt;/</span><span class="rvts24">button</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">form</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">div</span><span class="rvts19"> </span><span class="rvts25">style</span><span class="rvts18">="</span><span class="rvts25">position</span><span class="rvts18">: </span><span class="rvts58">fixed</span><span class="rvts18">; </span><span class="rvts25">bottom</span><span class="rvts18">: </span><span class="rvts58">0</span><span class="rvts18">; </span><span class="rvts25">left</span><span class="rvts18">: </span><span class="rvts58">0</span><span class="rvts18">; </span><span class="rvts25">padding</span><span class="rvts18">: </span><span class="rvts58">20px</span><span class="rvts18">; </span><span class="rvts25">font-size</span><span class="rvts18">: </span><span class="rvts58">18px</span><span class="rvts18">;"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">a</span><span class="rvts19"> </span><span class="rvts25">href</span><span class="rvts18">=</span><span class="rvts26">"</span><span class="rvts28">&lt;</span><span class="rvts24">c:url</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">'/'</span><span class="rvts19"> &nbsp;</span><span class="rvts28">/&gt;</span><span class="rvts26">"</span><span class="rvts19"> </span><span class="rvts28">&gt;</span><span class="rvts18">RETOUR</span><span class="rvts28">&lt;/</span><span class="rvts24">a</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">div</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">body</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">html</span><span class="rvts28">&gt;</span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr">Générateur gratuit de livres électroniques et documentation</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

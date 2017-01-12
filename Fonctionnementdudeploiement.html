@@ -1,0 +1,114 @@
+﻿<html>
+	
+<head>
+	<title>Fonctionnement du d&eacute;ploiement</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Fonctionnementdudeploiement");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Fonctionnement du d&eacute;ploiement</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="SPRING.html">SPRING</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="SPRING.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Obtenirdelaide.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Annotation.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts6">Désolé cette prise de note est en relation directe avec ma compréhension sur le moment... vous comprendrez en la lisant....</span></p>
+<p class="rvps2"><span class="rvts6">Merci Jéremy d'être aller si vite ;-(</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Projet/src/main/WEB-INF/applicationContext.xml</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Ajouter un rép source/main/</span><span class="rvts35">views</span></p>
+<p class="rvps2"><span class="rvts35"><br/></span></p>
+<p class="rvps2"><span class="rvts35">1) Fonctionnement du déploiement</span></p>
+<p class="rvps2"><span class="rvts35"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Tomcat/bin &gt; startup.bat</span></p>
+<p class="rvps2"><span class="rvts6">lib</span></p>
+<p class="rvps2"><span class="rvts6">log</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">firstservlet.war sous webapp</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">invalidelockHeader -&gt; vider le repository local de maven</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">tmp wtpwebapps</span></p>
+<p class="rvps2"><span class="rvts6">temp sous tomcat</span></p>
+<p class="rvps2"><span class="rvts6">work fichier temp mais peut être supprimer et se régénère cache de tomcat cote appli</span></p>
+<p class="rvps2"><span class="rvts6">conf </span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">2) Commande mvn : </span></p>
+<p class="rvps2"><span class="rvts35">mvn clean package</span></p>
+<p class="rvps2"><span class="rvts35"><br/></span></p>
+<p class="rvps2"><span class="rvts35">3) properies cocktail</span></p>
+<p class="rvps2"><span class="rvts35">web project settings ==&gt; nom du projet en minuscule</span></p>
+<p class="rvps2"><span class="rvts35"><br/></span></p>
+<p class="rvps2"><span class="rvts35">Menu Projet &gt; Clean</span></p>
+<p class="rvps2"><span class="rvts35"><br/></span></p>
+<p class="rvps2"><span class="rvts35">4) Création file général : Java resources/src/main/resources/menu.properties</span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr">Éditeur de documentation CHM facile</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

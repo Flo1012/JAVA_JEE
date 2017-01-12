@@ -1,0 +1,204 @@
+﻿<html>
+	
+<head>
+	<title>Projet Cocktail avec BDD</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("ProjetCocktailavecBDD");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Projet Cocktail avec BDD</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Structure.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="ormxml.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<tr valign="top">
+<td width="159" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">orm.xml</span></p>
+</td>
+<td width="893" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">Déclaration de la structure des tables mysql </span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">entity</span><span class="rvts19"> </span><span class="rvts25">class</span><span class="rvts18">=</span><span class="rvts26">"fr.formation.entity.Ingredient"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">table</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"ingredient"</span><span class="rvts28">&gt;&lt;/</span><span class="rvts24">table</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">attributes</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; </span><span class="rvts28">&lt;</span><span class="rvts24">id</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"id"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">column</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"id_ing"</span><span class="rvts19"> </span><span class="rvts28">/&gt;..................-&gt; nom du champ</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">generated-value</span><span class="rvts19"> </span><span class="rvts25">strategy</span><span class="rvts18">=</span><span class="rvts26">"IDENTITY"</span><span class="rvts19"> </span><span class="rvts28">/&gt;...-&gt; indique que </span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">c'est une clé</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; </span><span class="rvts28">&lt;/</span><span class="rvts24">id</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; </span><span class="rvts28">&lt;</span><span class="rvts24">basic</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"etat"</span><span class="rvts28">&gt;........................-&gt; nom dans Java</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> </span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">column</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"state"</span><span class="rvts19"> </span><span class="rvts28">/&gt;.............-&gt; nom dans mysql</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; </span><span class="rvts28">&lt;/</span><span class="rvts24">basic</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">attributes</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">entity</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">entity</span><span class="rvts19"> </span><span class="rvts25">class</span><span class="rvts18">=</span><span class="rvts26">"chemin complet jusqu'à la classe java"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">table</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"nom_table"</span><span class="rvts28">&gt;&lt;/</span><span class="rvts24">table</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">basic</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"idJava"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">column</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"id_mysql"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">basic</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">attributes</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">entity</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="159" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">persistence.xml</span></p>
+</td>
+<td width="893" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">Définit le "DriverManager"</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="159" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">pom.xml</span></p>
+</td>
+<td width="893" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">Ajout des dépendences utiles pour la base :</span></p>
+<p class="rvps6"><span class="rvts47"><br/></span></p>
+<p class="rvps6"><span class="rvts47">1) "mysql connector" </span></p>
+<p class="rvps6"><span class="rvts47">2) "spring data jpa</span></p>
+<p class="rvps6"><span class="rvts47">3) "hibernate core" dernière version</span></p>
+<p class="rvps6"><span class="rvts47">4) Copie "hibernate core" changer core en hibernate-entitymanager</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="159" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">applicationContext.xml</span></p>
+</td>
+<td width="893" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts47">Spring attent entityManagerEntity &nbsp;Name pris dans persistance.xml --&gt;</span></p>
+<p class="rvps2"><span class="rvts47"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" class="rvps2"><span class="rvts47">Ajout de 2 beans :</span></li>
+</ol>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps6"><span class="rvts47">entityManagerFactory</span></li>
+<li style="margin-left: 0px" class="rvps6"><span class="rvts47">transactionManager</span></li>
+</ul></ul>
+<p class="rvps2"><span class="rvts47"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="2" class="rvps2"><span class="rvts47">Ajout </span><span class="rvts33"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts48">jpa:repositories&gt;</span></li>
+</ol>
+<p class="rvps2"><span class="rvts48"><br/></span></p>
+<p class="rvps6"><span class="rvts32">base-package</span><span class="rvts33">=</span><span class="rvts34">"fr.formation.DAO"</span></p>
+<p class="rvps6"><span class="rvts34"><br/></span></p>
+<p class="rvps6"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">bean</span><span class="rvts19"> </span><span class="rvts25">id</span><span class="rvts18">=</span><span class="rvts26">"entityManagerFactory"</span><span class="rvts19"> </span></p>
+<p class="rvps6"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">class</span><span class="rvts18">=</span><span class="rvts26">"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps6"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">property</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"persistenceUnitName"</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"bar"</span><span class="rvts28">&gt;&lt;/</span><span class="rvts24">property</span><span class="rvts28">&gt;</span><span class="rvts18"> </span></p>
+<p class="rvps6"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">bean</span><span class="rvts28">&gt;</span></p>
+<p class="rvps6"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps6"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">bean</span><span class="rvts19"> </span><span class="rvts25">id</span><span class="rvts18">=</span><span class="rvts26">"transactionManager"</span><span class="rvts19"> </span></p>
+<p class="rvps6"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">class</span><span class="rvts18">=</span><span class="rvts26">"org.springframework.orm.jpa.JpaTransactionManager"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps6"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">property</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"entityManagerFactory"</span><span class="rvts19"> </span><span class="rvts25">ref</span><span class="rvts18">=</span><span class="rvts26">"entityManagerFactory"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span><span class="rvts18"> </span></p>
+<p class="rvps6"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">bean</span><span class="rvts28">&gt;</span></p>
+<p class="rvps6"><span class="rvts18"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="159" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts6">IngredientController.java</span></p>
+</td>
+<td width="893" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts47">Ajout de ModelAndView avec un appel à la jsp qui fait action</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="159" style="border-color: #000000; border-style: solid; padding: 1px;"><br/>
+</td>
+<td width="893" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts47">package fr.formation.service;</span></p>
+<p class="rvps2"><span class="rvts47"><br/></span></p>
+<p class="rvps2"><span class="rvts47">import java.util.List;</span></p>
+<p class="rvps2"><span class="rvts47"><br/></span></p>
+<p class="rvps2"><span class="rvts47">import org.springframework.beans.factory.annotation.Autowired;</span></p>
+<p class="rvps2"><span class="rvts47">import org.springframework.stereotype.Service;</span></p>
+<p class="rvps2"><span class="rvts47">import org.springframework.transaction.annotation.Transactional;</span></p>
+<p class="rvps2"><span class="rvts47"><br/></span></p>
+<p class="rvps2"><span class="rvts47">import fr.formation.DAO.IngredientDAO;</span></p>
+<p class="rvps2"><span class="rvts47">import fr.formation.entity.Ingredient;</span></p>
+<p class="rvps2"><span class="rvts47"><br/></span></p>
+<p class="rvps2"><span class="rvts47">@Service</span></p>
+<p class="rvps2"><span class="rvts47">public class IngredientService {</span></p>
+<p class="rvps2"><span class="rvts47"><br/></span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47">@Autowired</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47">private IngredientDAO dao;</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47">public List&lt;Ingredient&gt; getAll(){</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47">return this.dao.findAll();</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47">}</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47">@Transactional</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47">public Ingredient create(final Ingredient ingredient){</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47">return this.dao.save(ingredient);</span></p>
+<p class="rvps2"><span class="rvts47"></span><span class="rvts47"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts47">}</span></p>
+<p class="rvps2"><span class="rvts47">}</span></p>
+<p class="rvps2"><span class="rvts47"><br/></span></p>
+</td>
+</tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr">Générateur d'aides CHM gratuit</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

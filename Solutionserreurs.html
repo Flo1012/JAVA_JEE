@@ -1,0 +1,114 @@
+﻿<html>
+	
+<head>
+	<title>Solutions erreurs</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Solutionserreurs");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Solutions erreurs</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="NOTIONSGENERALES.html">NOTIONS GENERALES</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="NOTIONSGENERALES.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Cartographie.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="MAVEN.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<tr valign="top">
+<td width="535" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><img alt="" style="padding : 1px;" src="lib/NouvelElement10.png"></p>
+</td>
+<td width="517" style="border-color: #000000; border-style: solid; padding: 1px;"><br/>
+</td>
+</tr>
+<tr valign="top">
+<td width="535" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts19">org.springframework.beans.factory.NoSuchBeanDefinitionException: </span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts36">No qualifying bean </span><span class="rvts19">of type </span><span class="rvts36">'fr.formation.SERVICE.IngredientService' </span><span class="rvts19">available: </span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">expected at least 1 bean which qualifies as autowire candidate.</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td width="517" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts19">Le problème était que je n'avais pas déclarer mes packages dao et services dans mon fichier servlet-dispatch.xml&gt;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts19">Du coup j'en ai déduit que chaque package qui contient des classes utilisant des annotations du framework Spring doit être déclaré dans ce fichier XML !</span></p>
+<p class="rvps2"><span class="rvts27"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="535" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts19"><br/></span></p>
+</td>
+<td width="517" style="border-color: #000000; border-style: solid; padding: 1px;"><br/>
+</td>
+</tr>
+</table>
+</div>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/tour-des-fonctionnalites/generation-de-site-web-iphone">Générateur de documentation iPhone gratuit</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -1,0 +1,119 @@
+﻿<html>
+	
+<head>
+	<title>Mysql</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Mysql");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Mysql</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Ingredientjsp1.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Configdedepart.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts6">JPA</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts35">J</span><span class="rvts6">ava </span><span class="rvts35">P</span><span class="rvts6">ersistant </span><span class="rvts35">A</span><span class="rvts6">PI</span></p>
+<p class="rvps5"><span class="rvts6"><br/></span></p>
+<p class="rvps5"><span class="rvts6">--&gt; persistance.xml : config qui utilise JPA , nous JPA puis spring par les repositories</span></p>
+<p class="rvps2"><span class="rvts35"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">ORM</span></p>
+<p class="rvps2"><span class="rvts6">Object Relational Mapping</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Hibernate</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">1) Ajouter 3 dépendances dans pom.xml</span></p>
+<p class="rvps6"><span class="rvts38">1) "mysql connector" Ajout BDD --&gt;</span></p>
+<p class="rvps6"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> https://mvnrepository.com/artifact/mysql/mysql-connector-java </span></p>
+<p class="rvps6"><span class="rvts19"><br/></span></p>
+<p class="rvps6"><span class="rvts38">2) "spring data jpa" Recherche --&gt;</span></p>
+<p class="rvps6"><span class="rvts19"><br/></span></p>
+<p class="rvps6"><span class="rvts38">3) "hibernate core" dernière version --&gt;</span></p>
+<p class="rvps6"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps6"><span class="rvts18">4) Copier Hibernate core et modifier artifact en hibernate-entitymanager</span></p>
+<p class="rvps9"><span class="rvts28">&lt;</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span><span class="rvts18">hibernate-entitymanager</span><span class="rvts28">&lt;/</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">2) &nbsp;Sous /src/java/resources</span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" style="margin-left: 0px" class="rvps6"><span class="rvts6">Créer un dossier META-INF</span></li>
+<li value="2" style="margin-left: 0px" class="rvps6"><span class="rvts6">puis persistence.xml</span></li>
+<li value="3" style="margin-left: 0px" class="rvps6"><span class="rvts6">puis orm.xml</span></li>
+</ol></ol>
+<p class="rvps6"><span class="rvts6">===&gt; Fichier de config JPA</span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">3) Dans windows / preferences/ MAVEN</span></p>
+<p class="rvps6"><img alt="" style="padding : 1px;" src="lib/NouvelElement.png"></p>
+<p class="rvps6"><img alt="" style="padding : 1px;" src="lib/NouvelElement2.png"></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6">Pour &nbsp;chaque entité il faut un </span><span class="rvts35">id.</span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpauthoringsoftware.com/fr">Nouvelles et informations sur les outils de logiciels de création d'aide</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

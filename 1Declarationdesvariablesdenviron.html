@@ -1,0 +1,161 @@
+﻿<html>
+	
+<head>
+	<title>1) D&eacute;claration des variables d'environnement dans windows</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("1Declarationdesvariablesdenviron");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">1) D&eacute;claration des variables d'environnement dans windows</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="MAVEN.html">MAVEN</a> &rsaquo;&rsaquo; <a href="Installation.html">Installation</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Installation.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Installation.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="2Danseclipse.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts6">Après avoir téléchargé Maven</span></p>
+<p class="rvps2"><span class="rvts6">Ajouter JAVA_HOME lien vers le répertoire Java/jdk1.8.0_11</span></p>
+<p class="rvps2"><span class="rvts6">Ajouter dans Path le répertoire bin de Maven</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h1 class="rvps7"><span class="rvts0"><span class="rvts37">Créer l'arborescence des dossier sous le nx projet sous workspace :</span></span></h1>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6">Structure du dossier</span></p>
+<p class="rvps6"><span class="rvts6">C:\Users\hb-asus\workspace\CocktailBar</span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6">C:.</span></p>
+<p class="rvps6"><span class="rvts6">└───src</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; ├───main</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; │ &nbsp; ├───java</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; │ &nbsp; ├───resources</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; │ &nbsp; └───webapp</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; │ &nbsp; &nbsp; &nbsp; └───WEB-INF</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; └───test</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; ├───java</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; └───resources</span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<h1 class="rvps7"><span class="rvts0"><span class="rvts37">Par la suite avec la BDD</span></span></h1>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6">C:.</span></p>
+<p class="rvps6"><span class="rvts6">│ &nbsp; .classpath</span></p>
+<p class="rvps6"><span class="rvts6">│ &nbsp; .project</span></p>
+<p class="rvps6"><span class="rvts6">│ &nbsp; pom.xml</span></p>
+<p class="rvps6"><span class="rvts6">│</span></p>
+<p class="rvps6"><span class="rvts6">├───src</span></p>
+<p class="rvps6"><span class="rvts6">│ &nbsp; ├───main</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;├───java</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; └───fr</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; └───formation</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───CONTROLLER</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">IngredientController.java</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">MainController.java</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───DAO</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">IngredientDAO.java</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───entity</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">Ingredient.java</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───MODEL</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">Menu.java</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └───service</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">IngredientService.java</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;├───resources</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; │ &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">menu.properties</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; └───META-INF</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">orm.xml</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">persistence.xml</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;│</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;└───webapp</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;├───css</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> paper.css</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;├───inc</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">footer.jsp</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">header.jsp</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;├───views</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">addIngredient.jsp</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">index.jsp</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">ingredients.jsp</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;└───WEB-INF</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">applicationContext.xml</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">web.xml</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; </span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6">liste settings</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; .jsdtscope</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.core.resources.prefs</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.jdt.core.prefs</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.jpt.core.prefs</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.m2e.core.prefs</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.wst.common.component</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.wst.common.project.facet.core.prefs.xml</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.wst.common.project.facet.core.xml</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.wst.jsdt.ui.superType.container</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.wst.jsdt.ui.superType.name</span></p>
+<p class="rvps6"><span class="rvts6"> &nbsp; &nbsp; &nbsp; org.eclipse.wst.validation.prefs</span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/creer-des-livres-numeriques-epub">Générer des livres électroniques EPub facilement</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

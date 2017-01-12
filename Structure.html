@@ -1,0 +1,189 @@
+﻿<html>
+	
+<head>
+	<title>Structure</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Structure");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Structure</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="ProjetCocktailavantBDD.html">Projet Cocktail avant BDD</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="ProjetCocktailavantBDD.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="menuproperties1.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="ProjetCocktailavecBDD.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts6">C:.</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; .classpath</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; .project</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; pom.xml</span></p>
+<p class="rvps2"><span class="rvts6">│</span></p>
+<p class="rvps2"><span class="rvts6">├───src</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; ├───main</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; ├───java</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; └───fr</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; └───formation</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───CONTROLLER</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; IngredientController.java</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; MainController.java</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───DAO</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; IngredientDAO.java</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───entity</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; Ingredient.java</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───MODEL</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; Menu.java</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └───service</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IngredientService.java</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; ├─── resources</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │ &nbsp; &nbsp; &nbsp; menu.properties</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; └───webapp</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; &nbsp; &nbsp; ├───views</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; index.jsp</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; ingredients.jsp</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; &nbsp; &nbsp; └───WEB-INF</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; applicationContext.xml</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; web.xml</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; └───test</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; &nbsp; &nbsp; ├───java</span></p>
+<p class="rvps2"><span class="rvts6">│ &nbsp; &nbsp; &nbsp; └───resources</span></p>
+<p class="rvps2"><span class="rvts6">└───target</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; cocktailBar-0.0.1.war</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;├───classes</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; │ &nbsp; menu.properties</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; └───fr</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; └───formation</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───CONTROLLER</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; IngredientController.class</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; MainController.class</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───DAO</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; IngredientDAO.class</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───entity</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; Ingredient.class</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├───MODEL</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; Menu.class</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └───service</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IngredientService.class</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;├───cocktailBar-0.0.1</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; ├───META-INF</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; ├───views</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; │ &nbsp; &nbsp; &nbsp; index.jsp</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; └───WEB-INF</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; │ &nbsp; applicationContext.xml</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; │ &nbsp; web.xml</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; ├───classes</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; │ &nbsp; └───fr</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; └───formation</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └───CONTROLLER</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; │ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; MainController.class</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; └───lib</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; commons-logging-1.2.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; javax.servlet-api-3.1.0.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jstl-1.2.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spring-aop-4.3.4.RELEASE.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spring-beans-4.3.4.RELEASE.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spring-context-4.3.4.RELEASE.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spring-core-4.3.4.RELEASE.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spring-expression-4.3.4.RELEASE.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spring-web-4.3.4.RELEASE.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spring-webmvc-4.3.4.RELEASE.jar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;├───generated-sources</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; └───annotations</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;├───m2e-wtp</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; └───web-resources</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; └───META-INF</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │ &nbsp; MANIFEST.MF</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; │</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └───maven</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └───fr.formation</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └───cocktailBar</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pom.properties</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pom.xml</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp;│</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr">Éditeur de documentation CHM facile</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

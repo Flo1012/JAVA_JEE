@@ -1,0 +1,108 @@
+﻿<html>
+	
+<head>
+	<title>index.jsp</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("indexjsp");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">index.jsp</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="ProjetCocktailavantBDD.html">Projet Cocktail avant BDD</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="ProjetCocktailavantBDD.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="ingredientjsp.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="pomproperties.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts23">&lt;%@</span><span class="rvts19"> </span><span class="rvts24">page</span><span class="rvts19"> </span><span class="rvts25">language</span><span class="rvts18">=</span><span class="rvts26">"java"</span><span class="rvts19"> </span><span class="rvts25">contentType</span><span class="rvts18">=</span><span class="rvts26">"text/html; charset=UTF-8"</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">pageEncoding</span><span class="rvts18">=</span><span class="rvts26">"UTF-8"</span><span class="rvts23">%&gt;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts23">&lt;%@</span><span class="rvts19"> </span><span class="rvts24">taglib</span><span class="rvts19"> </span><span class="rvts25">prefix</span><span class="rvts18">=</span><span class="rvts26">"c"</span><span class="rvts19"> </span><span class="rvts25">uri</span><span class="rvts18">=</span><span class="rvts26">"http://java.sun.com/jsp/jstl/core"</span><span class="rvts23">%&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;!</span><span class="rvts24">DOCTYPE</span><span class="rvts19"> </span><span class="rvts28">html</span><span class="rvts19"> </span><span class="rvts46">PUBLIC</span><span class="rvts19"> </span><span class="rvts28">"-//W3C//DTD HTML 4.01 Transitional//EN"</span><span class="rvts19"> </span><span class="rvts42">"http://www.w3.org/TR/html4/loose.dtd"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">html</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">head</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">meta</span><span class="rvts19"> </span><span class="rvts25">http-equiv</span><span class="rvts18">=</span><span class="rvts26">"Content-Type"</span><span class="rvts19"> </span><span class="rvts25">content</span><span class="rvts18">=</span><span class="rvts26">"text/html; charset=UTF-8"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">title</span><span class="rvts28">&gt;</span><span class="rvts18">Gestion des cocktails</span><span class="rvts28">&lt;/</span><span class="rvts24">title</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">META</span><span class="rvts19"> </span><span class="rvts25">HTTP-EQUIV</span><span class="rvts18">=</span><span class="rvts26">"Refresh"</span><span class="rvts19"> </span><span class="rvts25">CONTENT</span><span class="rvts18">=</span><span class="rvts26">"5"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">head</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">body</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">h1</span><span class="rvts28">&gt;</span><span class="rvts18">Bienvenue dans l'applicationCocktail</span><span class="rvts28">&lt;/</span><span class="rvts24">h1</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">div</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">Menu :</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">ul</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">c:forEach</span><span class="rvts19"> </span><span class="rvts25">items</span><span class="rvts18">=</span><span class="rvts26">"</span><span class="rvts18">${menus}</span><span class="rvts26">"</span><span class="rvts19"> </span><span class="rvts25">var</span><span class="rvts18">=</span><span class="rvts26">"menu"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">c:url</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"</span><span class="rvts18">${menu.url}</span><span class="rvts26">.html"</span><span class="rvts19"> </span><span class="rvts25">var</span><span class="rvts18">=</span><span class="rvts26">"menuUrl"</span><span class="rvts28">&gt;&lt;/</span><span class="rvts24">c:url</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">li</span><span class="rvts28">&gt;&lt;</span><span class="rvts24">a</span><span class="rvts19"> </span><span class="rvts25">href</span><span class="rvts18">=</span><span class="rvts26">"</span><span class="rvts18">${menuUrl}</span><span class="rvts26">"</span><span class="rvts28">&gt;</span><span class="rvts18">${menu.title}</span><span class="rvts28">&lt;/</span><span class="rvts24">a</span><span class="rvts28">&gt;&lt;/</span><span class="rvts24">li</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">c:forEach</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">ul</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">div</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">body</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">html</span><span class="rvts28">&gt;</span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/tour-des-fonctionnalites/creez-des-fichiers-daide-pour-le-framework-qt-help">Produire des aides en ligne pour les applications Qt</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

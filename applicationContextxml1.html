@@ -1,0 +1,118 @@
+﻿<html>
+	
+<head>
+	<title>applicationContext.xml</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("applicationContextxml1");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">applicationContext.xml</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="ProjetCocktailavecBDD.html">Projet Cocktail avec BDD</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="ProjetCocktailavecBDD.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="pomxml1.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="IngredientControllerjava1.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts28">&lt;?</span><span class="rvts24">xml</span><span class="rvts19"> </span><span class="rvts25">version</span><span class="rvts18">=</span><span class="rvts26">"1.0"</span><span class="rvts19"> </span><span class="rvts25">encoding</span><span class="rvts18">=</span><span class="rvts26">"UTF-8"</span><span class="rvts28">?&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">beans</span><span class="rvts19"> </span><span class="rvts25">xmlns</span><span class="rvts18">=</span><span class="rvts26">"http://www.springframework.org/schema/beans"</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">xmlns:context</span><span class="rvts18">=</span><span class="rvts26">"http://www.springframework.org/schema/context"</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">xmlns:xsi</span><span class="rvts18">=</span><span class="rvts26">"http://www.w3.org/2001/XMLSchema-instance"</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts55">xmlns:jpa</span><span class="rvts53">=</span><span class="rvts54">"http://www.springframework.org/schema/data/jpa"</span></p>
+<p class="rvps2"><span class="rvts36"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">xsi:schemaLocation</span><span class="rvts18">=</span><span class="rvts26">"http://www.springframework.org/schema/beans</span></p>
+<p class="rvps2"><span class="rvts26"> &nbsp; &nbsp; &nbsp; &nbsp;http://www.springframework.org/schema/beans/spring-beans.xsd</span></p>
+<p class="rvps2"><span class="rvts26"> &nbsp; &nbsp; &nbsp; &nbsp;http://www.springframework.org/schema/context</span></p>
+<p class="rvps2"><span class="rvts26"> &nbsp; &nbsp; &nbsp; &nbsp;http://www.springframework.org/schema/context/spring-context.xsd</span></p>
+<p class="rvps2"><span class="rvts26"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts54">http://www.springframework.org/schema/data/jpa</span></p>
+<p class="rvps2"><span class="rvts54"> &nbsp; &nbsp; &nbsp; &nbsp;http://www.springframework.org/schema/data/jpa/spring-jpa.xsd"</span><span class="rvts52">&gt;</span></p>
+<p class="rvps2"><span class="rvts53"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;</span><span class="rvts24">context:component-scan</span><span class="rvts19"> </span><span class="rvts25">base-package</span><span class="rvts18">=</span><span class="rvts26">"fr.formation.CONTROLLER,fr.formation.MODEL,fr.formation.service"</span><span class="rvts28">&gt;&lt;/</span><span class="rvts24">context:component-scan</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">&lt;!-- nom de la propriété --&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">&lt;!-- view classe --&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">bean</span><span class="rvts19"> </span><span class="rvts25">id</span><span class="rvts18">=</span><span class="rvts26">"viewResolver"</span></p>
+<p class="rvps2"><span class="rvts19">.....</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">bean</span><span class="rvts19"> </span><span class="rvts25">id</span><span class="rvts18">=</span><span class="rvts26">"messageSource"</span></p>
+<p class="rvps2"><span class="rvts18">.....</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">&lt;!-- Spring attent entityManagerEntity &nbsp;NAme pris dans persistance.xml --&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">bean</span><span class="rvts19"> </span><span class="rvts25">id</span><span class="rvts18">=</span><span class="rvts26">"entityManagerFactory"</span><span class="rvts19"> </span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">class</span><span class="rvts18">=</span><span class="rvts26">"org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">property</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"persistenceUnitName"</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"bar"</span><span class="rvts28">&gt;&lt;/</span><span class="rvts24">property</span><span class="rvts28">&gt;</span><span class="rvts18"> </span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">bean</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">bean</span><span class="rvts19"> </span><span class="rvts25">id</span><span class="rvts18">=</span><span class="rvts26">"transactionManager"</span><span class="rvts19"> </span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">class</span><span class="rvts18">=</span><span class="rvts26">"org.springframework.orm.jpa.JpaTransactionManager"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">property</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"entityManagerFactory"</span><span class="rvts19"> </span><span class="rvts25">ref</span><span class="rvts18">=</span><span class="rvts26">"entityManagerFactory"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span><span class="rvts18"> </span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">bean</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">jpa:repositories</span><span class="rvts19"> </span><span class="rvts25">base-package</span><span class="rvts18">=</span><span class="rvts26">"fr.formation.DAO"</span><span class="rvts28">&gt;&lt;/</span><span class="rvts24">jpa:repositories</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">beans</span><span class="rvts28">&gt;</span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/tour-des-fonctionnalites/creez-des-fichiers-daide-pour-le-framework-qt-help">Créer des fichiers d'aide pour la plateforme Qt Help</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

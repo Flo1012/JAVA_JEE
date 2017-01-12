@@ -1,0 +1,806 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>JAVA JEE- Table of Contents</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/silver-theme/jquery-ui-1.8.12.custom.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/dynatree/chm/ui.dynatree.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/toc.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#tabs .ui-widget-header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.dynatree.min.js"></script>
+	<script type="text/javascript" src="js/hndjsse.js"></script>
+	<script type="text/javascript">
+	
+		window.bSearchDataLoaded = false;
+		var sHelpIdToActivate = '';
+	
+		$(document).ready(function()
+		{
+			var sAnchorName = '';
+			try { sAnchorName = top.location.href.substring(top.location.href.lastIndexOf("#") + 1, top.location.href.length); }
+			catch(err) { sAnchorName = ''; }
+			var nSelectedTab = 0;
+			if (sAnchorName == '_index') nSelectedTab = 1
+			else if (sAnchorName == '_search') nSelectedTab = 2;			
+			$("#tabs").tabs({
+				selected: nSelectedTab,
+				select: function(event, ui) { HideKwPopup(); }
+			});
+			
+			// Toc
+			if ($("#tab-toc").length) {
+				$("#tab-toc").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#tab-keywords").length && $("#tab-keywords").dynatree && $("#tab-keywords").dynatree("getTree") && $("#tab-keywords").dynatree("getTree").activateKey)
+							$("#tab-keywords").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-toc").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				// Select the active help id
+				if (sHelpIdToActivate != '') $("#tab-toc").dynatree("getTree").activateKey(sHelpIdToActivate);
+			}
+			
+			// Keywords
+			
+			if ($("#tab-keywords").length) {
+				$("#tab-keywords").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onClick: function(node, event){
+						HideKwPopup();
+						if (node.data && node.data.click)
+						{
+							var aRefList = null;
+							eval('aRefList=' + node.data.click);
+							if (ShowKwPopup(node.li, aRefList))
+							{
+								if ($("#tab-toc") && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").activateKey)
+									$("#tab-toc").dynatree("getTree").activateKey(null);
+								if(node.data.href && node.data.href != '#'){
+									window.open(node.data.href, node.data.target);
+								}
+							}
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-keywords").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				}
+			
+			// Load search data
+			(function() {
+				var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+				se.src = 'js/hndsd.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+			})();
+		});
+		
+		$('body').click(function() {
+			HideKwPopup();
+		});
+		
+		function SelectTocItem(sHelpId)
+		{
+			if ($("#tab-toc").length && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").getNodeByKey) {
+				$("#tab-toc").dynatree("getTree").getNodeByKey(sHelpId).activateSilently();
+			}
+			else {
+				sHelpIdToActivate = sHelpId;
+			}
+		}
+		
+		function HideKwPopup()
+		{
+			if($("#popupMenu")) $("#popupMenu").remove();
+		}
+		
+		function ShowKwPopup(oSender, aLinks)
+		{
+			HideKwPopup();
+			if (!aLinks || !aLinks.length || aLinks.length == 0) return false
+			else if (aLinks.length == 1) return true
+			else
+			{
+				var oParentDiv = document.createElement("DIV");
+				oParentDiv.id = "popupMenu";
+				var oLink = null;
+				// Close button
+				oLink = document.createElement("SPAN");
+				oLink.className = "close-button";
+				oLink.innerHTML = "X";
+				oLink.href = "#";
+				oLink.onclick = HideKwPopup;
+				oParentDiv.appendChild(oLink);
+				// Items
+				for (var nCnt=0; nCnt<aLinks.length; nCnt++)
+				{
+					oLink = document.createElement("A");
+					oLink.innerHTML = aLinks[nCnt][0];
+					oLink.href = aLinks[nCnt][1];
+					oLink.target = "FrameMain";
+					oLink.onclick = HideKwPopup;
+					oParentDiv.appendChild(oLink);
+				}
+				document.body.appendChild(oParentDiv);
+				var pos = $(oSender).offset(); 
+				var height = $(oSender).height();
+				$(oParentDiv).css({
+					"left": (pos.left+20) + "px",
+					"top": (pos.top + height + 5) + "px"
+				});
+				$(oParentDiv).show();
+				return false;
+			}
+		}
+		
+		function PerformSearch()
+		{
+			if (!window.bSearchDataLoaded) {
+				$("#search_results").html("Search engine data hasn't been fully loaded yet or an error occurred while loading it. This usually happens when documentation is browsed locally.");
+				return;
+			}
+			sValue = $("#search_value").val();
+			$("#search_results").html('Searching...');
+			var oSearchEngine = new HndJsSe;
+			oSearchEngine.ParseInput(sValue);			
+			oSearchEngine.PerformSearch();
+			if (!oSearchEngine.aResults || !oSearchEngine.aResults.length)
+			{
+				$("#search_results").html('No results found.');
+			}
+			else
+			{
+				$("#search_results").html('<div id="search_results_content"></div>');
+				var oUl = $("#search_results_content").append("<ul id='lr'></ul>").find("ul");
+				for (var nCnt = 0; nCnt < oSearchEngine.aResults.length; nCnt++)
+				{
+					if (oSearchEngine.aResults[nCnt][0] < aTl.length)
+					{
+						oUl.append("<li><a href='" + aTl[oSearchEngine.aResults[nCnt][0]][0] + "?search=" + escape(sValue) + "' target='FrameMain'>" + unescape(aTl[oSearchEngine.aResults[nCnt][0]][1]) + "</a></li>");
+					}
+				}
+				// Tree
+				$("#search_results_content").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#search_results_content") && $("#search_results_content").dynatree && $("#search_results_content").dynatree("getTree") && $("#search_results_content").dynatree("getTree").activateKey)
+							$("#search_results_content").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tab-toc">Contents</a></li>
+			<li><a href="#tab-keywords">Index</a></li>
+			<li><a href="#tab-search">Search</a></li>
+			</ul>
+		<div id="tab-toc">
+			<ul id="toc" class="">
+
+				<li class="" id="DocPapier" data="">
+							<a
+							href="DocPapier.html"
+							target="FrameMain">
+								DocPapier</a>
+
+				</li><li class="" id="Touteslesinstallations" data="">
+							<a
+							href="Touteslesinstallations.html"
+							target="FrameMain">
+								Toutes les installations</a>
+
+				</li><li class="folder" id="NOTIONSGENERALES" data="">
+							<a
+							href="NOTIONSGENERALES.html"
+							target="FrameMain">
+								NOTIONS GENERALES</a>
+
+				<ul><li class="" id="AconnaitreTutoriel" data="">
+							<a
+							href="AconnaitreTutoriel.html"
+							target="FrameMain">
+								A connaitre / Tutoriel</a>
+
+				</li><li class="" id="Raccourcis" data="">
+							<a
+							href="Raccourcis.html"
+							target="FrameMain">
+								Raccourcis</a>
+
+				</li><li class="" id="Syntaxedansunjava" data="">
+							<a
+							href="Syntaxedansunjava.html"
+							target="FrameMain">
+								Syntaxe dans un java</a>
+
+				</li><li class="" id="Syntaxejstl" data="">
+							<a
+							href="Syntaxejstl.html"
+							target="FrameMain">
+								Syntaxe jstl</a>
+
+				</li><li class="folder" id="ParametrageEclipse" data="">
+							<a
+							href="ParametrageEclipse.html"
+							target="FrameMain">
+								Param&eacute;trage Eclipse</a>
+
+				<ul><li class="" id="ConfigMarkers" data="">
+							<a
+							href="ConfigMarkers.html"
+							target="FrameMain">
+								Config Markers</a>
+
+				</li></ul></li><li class="" id="Cartographie" data="">
+							<a
+							href="Cartographie.html"
+							target="FrameMain">
+								Cartographie</a>
+
+				</li><li class="" id="Solutionserreurs" data="">
+							<a
+							href="Solutionserreurs.html"
+							target="FrameMain">
+								Solutions erreurs</a>
+
+				</li></ul></li><li class="folder" id="MAVEN" data="">
+							<a
+							href="MAVEN.html"
+							target="FrameMain">
+								MAVEN</a>
+
+				<ul><li class="folder" id="Installation" data="">
+							<a
+							href="Installation.html"
+							target="FrameMain">
+								Installation</a>
+
+				<ul><li class="" id="1Declarationdesvariablesdenviron" data="">
+							<a
+							href="1Declarationdesvariablesdenviron.html"
+							target="FrameMain">
+								1) D&eacute;claration des variables d'environnement dans windows</a>
+
+				</li><li class="" id="2Danseclipse" data="">
+							<a
+							href="2Danseclipse.html"
+							target="FrameMain">
+								2) Dans &eacute;clipse</a>
+
+				</li><li class="" id="3Definitiondupomxml" data="">
+							<a
+							href="3Definitiondupomxml.html"
+							target="FrameMain">
+								3) D&eacute;finition du pom.xml</a>
+
+				</li><li class="" id="4Lesliens" data="">
+							<a
+							href="4Lesliens.html"
+							target="FrameMain">
+								4) Les liens</a>
+
+				</li><li class="" id="Nouveauchapitre" data="">
+							<a
+							href="Nouveauchapitre.html"
+							target="FrameMain">
+								Nouveau chapitre</a>
+
+				</li></ul></li></ul></li><li class="folder" id="SPRING" data="">
+							<a
+							href="SPRING.html"
+							target="FrameMain">
+								SPRING</a>
+
+				<ul><li class="" id="Installation1" data="">
+							<a
+							href="Installation1.html"
+							target="FrameMain">
+								Installation</a>
+
+				</li><li class="" id="Obtenirdelaide" data="">
+							<a
+							href="Obtenirdelaide.html"
+							target="FrameMain">
+								Obtenir de l'aide</a>
+
+				</li><li class="" id="Fonctionnementdudeploiement" data="">
+							<a
+							href="Fonctionnementdudeploiement.html"
+							target="FrameMain">
+								Fonctionnement du d&eacute;ploiement</a>
+
+				</li><li class="" id="Annotation" data="">
+							<a
+							href="Annotation.html"
+							target="FrameMain">
+								@Annotation</a>
+
+				</li></ul></li><li class="folder" id="ProjetCocktailavantBDD" data="">
+							<a
+							href="ProjetCocktailavantBDD.html"
+							target="FrameMain">
+								Projet Cocktail avant BDD</a>
+
+				<ul><li class="" id="pomxml" data="">
+							<a
+							href="pomxml.html"
+							target="FrameMain">
+								pom.xml</a>
+
+				</li><li class="" id="webxml" data="">
+							<a
+							href="webxml.html"
+							target="FrameMain">
+								web.xml</a>
+
+				</li><li class="" id="applicationContextxml" data="">
+							<a
+							href="applicationContextxml.html"
+							target="FrameMain">
+								applicationContext.xml</a>
+
+				</li><li class="" id="menuproperties" data="">
+							<a
+							href="menuproperties.html"
+							target="FrameMain">
+								menu.properties</a>
+
+				</li><li class="" id="IngredientControllerjava" data="">
+							<a
+							href="IngredientControllerjava.html"
+							target="FrameMain">
+								IngredientController.java</a>
+
+				</li><li class="" id="Menujava" data="">
+							<a
+							href="Menujava.html"
+							target="FrameMain">
+								Menu.java</a>
+
+				</li><li class="" id="IngredientServicejava" data="">
+							<a
+							href="IngredientServicejava.html"
+							target="FrameMain">
+								IngredientService.java</a>
+
+				</li><li class="" id="IngredientDAOjava" data="">
+							<a
+							href="IngredientDAOjava.html"
+							target="FrameMain">
+								IngredientDAO.java</a>
+
+				</li><li class="" id="Ingredientjava" data="">
+							<a
+							href="Ingredientjava.html"
+							target="FrameMain">
+								Ingredient.java</a>
+
+				</li><li class="" id="MainControllerjava" data="">
+							<a
+							href="MainControllerjava.html"
+							target="FrameMain">
+								MainController.java</a>
+
+				</li><li class="" id="Placercorrectementlesfichiers" data="">
+							<a
+							href="Placercorrectementlesfichiers.html"
+							target="FrameMain">
+								Placer correctement les fichiers</a>
+
+				</li><li class="" id="ingredientjsp" data="">
+							<a
+							href="ingredientjsp.html"
+							target="FrameMain">
+								ingredient.jsp</a>
+
+				</li><li class="" id="indexjsp" data="">
+							<a
+							href="indexjsp.html"
+							target="FrameMain">
+								index.jsp</a>
+
+				</li><li class="" id="pomproperties" data="">
+							<a
+							href="pomproperties.html"
+							target="FrameMain">
+								pom.properties</a>
+
+				</li><li class="" id="menuproperties1" data="">
+							<a
+							href="menuproperties1.html"
+							target="FrameMain">
+								menu.properties</a>
+
+				</li><li class="" id="Structure" data="">
+							<a
+							href="Structure.html"
+							target="FrameMain">
+								Structure</a>
+
+				</li></ul></li><li class="folder" id="ProjetCocktailavecBDD" data="">
+							<a
+							href="ProjetCocktailavecBDD.html"
+							target="FrameMain">
+								Projet Cocktail avec BDD</a>
+
+				<ul><li class="" id="ormxml" data="">
+							<a
+							href="ormxml.html"
+							target="FrameMain">
+								orm.xml</a>
+
+				</li><li class="" id="persistencexml" data="">
+							<a
+							href="persistencexml.html"
+							target="FrameMain">
+								persistence.xml</a>
+
+				</li><li class="" id="pomxml1" data="">
+							<a
+							href="pomxml1.html"
+							target="FrameMain">
+								pom.xml</a>
+
+				</li><li class="" id="applicationContextxml1" data="">
+							<a
+							href="applicationContextxml1.html"
+							target="FrameMain">
+								applicationContext.xml</a>
+
+				</li><li class="" id="IngredientControllerjava1" data="">
+							<a
+							href="IngredientControllerjava1.html"
+							target="FrameMain">
+								IngredientController.java</a>
+
+				</li><li class="" id="IngredientDAOjava1" data="">
+							<a
+							href="IngredientDAOjava1.html"
+							target="FrameMain">
+								IngredientDAO.java</a>
+
+				</li><li class="" id="IngredientServicejava1" data="">
+							<a
+							href="IngredientServicejava1.html"
+							target="FrameMain">
+								IngredientService.java</a>
+
+				</li><li class="" id="AddIngredientjsp" data="">
+							<a
+							href="AddIngredientjsp.html"
+							target="FrameMain">
+								AddIngredient.jsp</a>
+
+				</li><li class="" id="Ingredientjsp1" data="">
+							<a
+							href="Ingredientjsp1.html"
+							target="FrameMain">
+								Ingredient.jsp</a>
+
+				</li></ul></li><li class="folder" id="Mysql" data="">
+							<a
+							href="Mysql.html"
+							target="FrameMain">
+								Mysql</a>
+
+				<ul><li class="" id="Configdedepart" data="">
+							<a
+							href="Configdedepart.html"
+							target="FrameMain">
+								Config de d&eacute;part</a>
+
+				</li><li class="" id="ConfigtjsJPA" data="">
+							<a
+							href="ConfigtjsJPA.html"
+							target="FrameMain">
+								Config tjs JPA</a>
+
+				</li><li class="" id="VueController" data="">
+							<a
+							href="VueController.html"
+							target="FrameMain">
+								Vue/Controller/</a>
+
+				</li></ul></li><li class="folder" id="GIT" data="">
+							<a
+							href="GIT.html"
+							target="FrameMain">
+								GIT</a>
+
+				<ul><li class="" id="Listedescommandes" data="">
+							<a
+							href="Listedescommandes.html"
+							target="FrameMain">
+								Liste des commandes</a>
+
+				</li></ul></li><li class="folder" id="ProjetCocktaildeJeremy" data="">
+							<a
+							href="ProjetCocktaildeJeremy.html"
+							target="FrameMain">
+								Projet Cocktail de Jeremy</a>
+
+				<ul><li class="folder" id="srcmainjava" data="">
+							<a
+							href="srcmainjava.html"
+							target="FrameMain">
+								src/main/java</a>
+
+				<ul><li class="folder" id="CONTROLLER" data="">
+							<a
+							href="CONTROLLER.html"
+							target="FrameMain">
+								CONTROLLER</a>
+
+				<ul><li class="" id="CocktailController" data="">
+							<a
+							href="CocktailController.html"
+							target="FrameMain">
+								CocktailController</a>
+
+				</li><li class="" id="IngredientController" data="">
+							<a
+							href="IngredientController.html"
+							target="FrameMain">
+								IngredientController</a>
+
+				</li><li class="" id="MainController" data="">
+							<a
+							href="MainController.html"
+							target="FrameMain">
+								MainController</a>
+
+				</li></ul></li><li class="folder" id="DAO" data="">
+							<a
+							href="DAO.html"
+							target="FrameMain">
+								DAO</a>
+
+				<ul><li class="" id="CocktailDAO" data="">
+							<a
+							href="CocktailDAO.html"
+							target="FrameMain">
+								CocktailDAO</a>
+
+				</li><li class="" id="IngredientDao" data="">
+							<a
+							href="IngredientDao.html"
+							target="FrameMain">
+								 IngredientDao</a>
+
+				</li></ul></li><li class="folder" id="ENTITY" data="">
+							<a
+							href="ENTITY.html"
+							target="FrameMain">
+								ENTITY</a>
+
+				<ul><li class="" id="Cocktail" data="">
+							<a
+							href="Cocktail.html"
+							target="FrameMain">
+								Cocktail</a>
+
+				</li><li class="" id="Ingredient" data="">
+							<a
+							href="Ingredient.html"
+							target="FrameMain">
+								Ingredient</a>
+
+				</li></ul></li><li class="folder" id="MODEL" data="">
+							<a
+							href="MODEL.html"
+							target="FrameMain">
+								MODEL</a>
+
+				<ul><li class="" id="Menu" data="">
+							<a
+							href="Menu.html"
+							target="FrameMain">
+								Menu</a>
+
+				</li></ul></li><li class="folder" id="SERVICE" data="">
+							<a
+							href="SERVICE.html"
+							target="FrameMain">
+								SERVICE</a>
+
+				<ul><li class="" id="CocktailService" data="">
+							<a
+							href="CocktailService.html"
+							target="FrameMain">
+								CocktailService</a>
+
+				</li><li class="" id="IngredientService" data="">
+							<a
+							href="IngredientService.html"
+							target="FrameMain">
+								IngredientService</a>
+
+				</li></ul></li></ul></li><li class="folder" id="srmainresources" data="">
+							<a
+							href="srmainresources.html"
+							target="FrameMain">
+								sr/main/resources</a>
+
+				<ul><li class="" id="menuproperties2" data="">
+							<a
+							href="menuproperties2.html"
+							target="FrameMain">
+								menu.properties</a>
+
+				</li><li class="folder" id="METAINF" data="">
+							<a
+							href="METAINF.html"
+							target="FrameMain">
+								META-INF</a>
+
+				<ul><li class="" id="ormxml1" data="">
+							<a
+							href="ormxml1.html"
+							target="FrameMain">
+								orm.xml</a>
+
+				</li><li class="" id="persistencexml1" data="">
+							<a
+							href="persistencexml1.html"
+							target="FrameMain">
+								persistence.xml</a>
+
+				</li></ul></li><li class="folder" id="webapp" data="">
+							<a
+							href="webapp.html"
+							target="FrameMain">
+								webapp</a>
+
+				<ul><li class="folder" id="css" data="">
+							<a
+							href="css.html"
+							target="FrameMain">
+								css</a>
+
+				<ul><li class="" id="Nouveauchapitre1" data="">
+							<a
+							href="Nouveauchapitre1.html"
+							target="FrameMain">
+								Nouveau chapitre</a>
+
+				</li></ul></li><li class="" id="views" data="">
+							<a
+							href="views.html"
+							target="FrameMain">
+								views</a>
+
+				</li><li class="" id="WEBINF" data="">
+							<a
+							href="WEBINF.html"
+							target="FrameMain">
+								WEB-INF</a>
+
+				</li></ul></li></ul></li></ul></li><li class="folder" id="Outils" data="">
+							<a
+							href="Outils.html"
+							target="FrameMain">
+								Outils</a>
+
+				<ul><li class="" id="STAN" data="">
+							<a
+							href="STAN.html"
+							target="FrameMain">
+								STAN</a>
+
+				</li></ul></li><li class="folder" id="GlassFish" data="">
+							<a
+							href="GlassFish.html"
+							target="FrameMain">
+								GlassFish</a>
+
+				<ul><li class="" id="LancerlaconsoleGlassfish" data="">
+							<a
+							href="LancerlaconsoleGlassfish.html"
+							target="FrameMain">
+								Lancer la console Glassfish</a>
+
+				</li><li class="" id="Install" data="">
+							<a
+							href="Install.html"
+							target="FrameMain">
+								Install</a>
+
+				</li><li class="" id="Changementport8080" data="">
+							<a
+							href="Changementport8080.html"
+							target="FrameMain">
+								Changement port 8080</a>
+
+				</li><li class="" id="Parametragedeslogs" data="">
+							<a
+							href="Parametragedeslogs.html"
+							target="FrameMain">
+								Param&eacute;trage des logs</a>
+
+				</li><li class="" id="Mysqlpool" data="">
+							<a
+							href="Mysqlpool.html"
+							target="FrameMain">
+								Mysql pool</a>
+
+				</li><li class="" id="Danseclipse" data="">
+							<a
+							href="Danseclipse.html"
+							target="FrameMain">
+								Dans eclipse</a>
+
+				</li><li class="" id="SchemaAppli" data="">
+							<a
+							href="SchemaAppli.html"
+							target="FrameMain">
+								Sch&eacute;ma Appli</a>
+
+				</li><li class="" id="Remoredebugging" data="">
+							<a
+							href="Remoredebugging.html"
+							target="FrameMain">
+								Remore debugging</a>
+
+				</li></ul></li></ul>
+		</div>
+		
+		<div id="tab-keywords">
+			<ul id="keywords">
+
+				</ul>
+		</div>
+		
+		<div id="tab-search">
+			<form onsubmit="PerformSearch(); return false;">
+				<label for="search_value">Search:</label>
+				<input id="search_value" name="search_value"></input>
+				<input type="submit" value="Search"/>
+			</form>
+			<div id="search_results"></div>
+		</div>
+		
+		</div>
+    
+</body>
+
+</html>
+
