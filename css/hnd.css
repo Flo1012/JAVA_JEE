@@ -375,6 +375,19 @@ span.rvts67
  font-style: italic;
  color: #000000;
 }
+span.rvts68
+{
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+}
+span.rvts69
+{
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ background-color: #e8f2fe;
+ text-decoration: underline;
+}
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
