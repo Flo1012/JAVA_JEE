@@ -1,0 +1,95 @@
+﻿<html>
+	
+<head>
+	<title>Annotations BEAN</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("AnnotationsBEAN");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Annotations BEAN</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="JFS.html">JFS</a> &rsaquo;&rsaquo; <a href="Annotations.html">Annotations</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Annotations.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="AnnotationsCONTROLLER.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="AnnotationsDAO.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h2 class="rvps12"><span class="rvts0"><span class="rvts60">Annotations nécessaires pour BEAN</span></span></h2>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps13"><span class="rvts0"><span class="rvts61">1) Au dessus des classes en connexion avec la BDD</span></span></h3>
+<p class="rvps2"><span class="rvts43">@ManagedBean</span></p>
+<p class="rvps2"><span class="rvts43">@ViewScoped</span></p>
+<p class="rvps2"><span class="rvts73">public</span><span class="rvts33"> </span><span class="rvts73">class</span><span class="rvts33"> ProductBean </span><span class="rvts73">implements</span><span class="rvts33"> Serializable {</span></p>
+<p class="rvps2"><span class="rvts43"><br/></span></p>
+<h3 class="rvps13"><span class="rvts0"><span class="rvts61">OU</span></span></h3>
+<h3 class="rvps13"><span class="rvts0"><span class="rvts61">1) Au dessus de la classe de login</span></span></h3>
+<p class="rvps2"><span class="rvts43">@ManagedBean</span></p>
+<p class="rvps2"><span class="rvts43">@SessionScoped</span></p>
+<p class="rvps2"><span class="rvts73">public</span><span class="rvts33"> </span><span class="rvts73">class</span><span class="rvts33"> LoginBean </span><span class="rvts73">implements</span><span class="rvts33"> Serializable {</span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/outils-creation-aide">Outil de création d'aide complet</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

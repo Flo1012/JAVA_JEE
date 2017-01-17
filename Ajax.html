@@ -1,0 +1,106 @@
+﻿<html>
+	
+<head>
+	<title>Ajax</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Ajax");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Ajax</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="JFS.html">JFS</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="JFS.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="AnnotationsENTITY.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts18">En ajax, la page n'est pas rafraîchit, il faut indiquer ce qui doit être mis à jour </span></p>
+<p class="rvps2"><span class="rvts18">le render("le rendu") appelle l'attribut à mettre à jour.</span></p>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps2"><span class="rvts18">Selon l'API utilisant ajax, &lt;h:ajax&gt; &lt;f:ajax&gt; : L'écriture sera particulière à chaque API, les balises n'auront pas les même arguments.</span></p>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<h2 class="rvps12"><span class="rvts0"><span class="rvts75">Pour &lt;f:ajax &gt;</span></span></h2>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps6"><span class="rvts18">Si on souhaite rafraîchir un élément d'un autre formulaire, il faut faire précéder le champ par le nom du formulaire</span></p>
+<p class="rvps6"><span class="rvts76">ex</span><span class="rvts18"> : @form updateModeleValue voir tout ce qui est cablé sur le formulaire.</span></p>
+<p class="rvps6"><span class="rvts19"><br/></span></p>
+<p class="rvps6"><span class="rvts18">D'autres attributs sont disponible pour ajax :</span></p>
+<p class="rvps6"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps9"><span class="rvts53">Attribut disable</span><br/><span class="rvts18">Dès que l'on commence ajax, on est en ajax donc si l'on souhaite récupérer autre chose, il faut utilisé la balise </span><span class="rvts53">disable.</span></li>
+</ul></ul>
+<p class="rvps6"><span class="rvts18"><br/></span></p>
+<p class="rvps6"><span class="rvts19"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px" class="rvps9"><span class="rvts53">Attribut event</span></li>
+</ul></ul>
+<p class="rvps10"><span class="rvts18">celui-ci déclenche une requête ajax dans un événement inputtext onchange</span></p>
+<p class="rvps6"><span class="rvts18"><br/></span></p>
+<p class="rvps6"><span class="rvts18"><br/></span></p>
+<p class="rvps6"><span class="rvts18">Lorsque l'on teste un élément à null il faut que se soit un objet. Donc pour les int il faut convertir en Integer!</span></p>
+<p class="rvps6"><span class="rvts27"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/tour-des-fonctionnalites/generation-de-site-web-iphone">Sites web iPhone faciles</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

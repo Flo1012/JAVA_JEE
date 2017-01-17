@@ -383,9 +383,52 @@ span.rvts68
 }
 span.rvts69
 {
+ font-size: 14pt;
+ font-style: italic;
+ font-weight: bold;
+}
+span.rvts70
+{
  font-family: 'Consolas';
- color: #3f7f5f;
+ color: #7f0055;
+}
+span.rvts71
+{
+ font-style: italic;
+ color: #808080;
+}
+span.rvts72
+{
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #0000c0;
+}
+span.rvts73
+{
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
  background-color: #e8f2fe;
+}
+span.rvts74
+{
+ font-size: 13pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #646464;
+}
+span.rvts75
+{
+ font-size: 14pt;
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #000000;
+}
+span.rvts76
+{
+ font-family: 'Consolas';
+ color: #000000;
  text-decoration: underline;
 }
 /* ========== Para Styles ========== */
