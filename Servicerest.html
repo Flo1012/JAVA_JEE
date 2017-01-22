@@ -1,0 +1,118 @@
+﻿<html>
+	
+<head>
+	<title>Service rest</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Servicerest");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Service rest</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Testunitaire.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h2 class="rvps12"><span class="rvts0"><span class="rvts82">Quelques explications</span></span></h2>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps2"><span class="rvts42"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">Comme on a besoin d'une requête vers la BBD il faut ingredientService</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">Le but de REST est de faire une API </span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">depuis internet envoi/reception depuis un serveur </span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">les annotations de REST s'accorde avec Spring Security</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">Respect de http standard mais coté présentation</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;">
+<li style="margin-left: 0px" class="rvps15"><span class="rvts18">ajouter (POST), </span></li>
+<li style="margin-left: 0px" class="rvps15"><span class="rvts18">modifier (PUT), </span></li>
+<li style="margin-left: 0px" class="rvps15"><span class="rvts18">Lire (GET) </span></li>
+<li style="margin-left: 0px" class="rvps15"><span class="rvts18">Supprimer (DELETE)</span></li>
+</ul></ul></ul>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">ex : dataIngredient on peut faire les 4 actions par leur identifiant</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> </span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">Un service REST est un service WEB qui fait les mm actions que le CRUD</span></p>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">NIVEAU 1 : Bien définir API REST avec les noms logiques</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">NIVEAU 2 : Standardisé pour être utilisable avec une documentation</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">NIVEAU 3 : Pas de doc l'api fournit tte la doc (http option)</span></p>
+<p class="rvps2"><span class="rvts84"><br/></span></p>
+<h2 class="rvps12"><span class="rvts0"><span class="rvts60">Dans DataController :</span></span></h2>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts43">@Controller</span></p>
+<p class="rvps2"><span class="rvts43">@RequestMapping</span><span class="rvts18">(</span><span class="rvts20">"/data"</span><span class="rvts18">)</span></p>
+<p class="rvps2"><span class="rvts17">public class </span><span class="rvts18">Datacontroller {</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@Autowired</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> IngredientService </span><span class="rvts44">ingredientService</span><span class="rvts18">;</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts42">//</span><span class="rvts42"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">APPLICATION_JSON_UTF8_VALUE &nbsp; &nbsp;==&gt; tjs prendre _value</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@GetMapping</span><span class="rvts18">(value = </span><span class="rvts20">"/ingredients"</span><span class="rvts18"> , produces = MediaType.</span><span class="rvts78">APPLICATION_JSON_UTF8_VALUE</span><span class="rvts18">)</span></p>
+<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> List&lt;Ingredient&gt; listIngredients() {</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">ingredientService</span><span class="rvts18">.getAll();</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
+<p class="rvps2"><span class="rvts18">}</span></p>
+<p class="rvps2"><span class="rvts27"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr">Générateur de documentation d'aide HTML gratuit</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -1,0 +1,183 @@
+﻿<html>
+	
+<head>
+	<title>Qq tags</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Qqtags");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Qq tags</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="JFS.html">JFS</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="JFS.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Ajax.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="WebServices.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;</span><span class="rvts24">f:metadata</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts28"><br/></span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38">Tag permettant de gérer des données contextuelles à la vue </span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps5"><span class="rvts28">&lt;</span><span class="rvts24">f:viewParam</span><span class="rvts19"> </span><span class="rvts25">name</span><span class="rvts18">=</span><span class="rvts26">"productId"&nbsp;</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"#{productController.productId}"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38">Ce tag permet de lier une propriété d'un bean sans en faire un champ dans la page.</span></p>
+<p class="rvps2"><span class="rvts38">C'est simplement contextuel à la vue. </span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps5"><span class="rvts28">&lt;</span><span class="rvts24">f:event</span><span class="rvts19"> </span><span class="rvts25">type</span><span class="rvts18">=</span><span class="rvts26">"preRenderView"</span><span class="rvts19"> </span><span class="rvts25">listener</span><span class="rvts18">=</span><span class="rvts26">"#{productController.prepareEdit}"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">f:metadata</span><span class="rvts28">&gt;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38">Ce tag permet de déclencher une méthode Java lors d'un "process event" du cycle de vie JSF. </span></p>
+<p class="rvps2"><span class="rvts38">Le preRenderView est l'événement déclenché avant la dernière étape du cycle 'RenderView'. </span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts28"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">ui:fragment</span><span class="rvts19"> </span><span class="rvts25">rendered</span><span class="rvts18">=</span><span class="rvts26">"#{empty productController.productId}"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">h2</span><span class="rvts28">&gt;</span><span class="rvts18">Créer un nouveau produit :</span><span class="rvts28">&lt;/</span><span class="rvts24">h2</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">ui:fragment</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38">Tag permettant d'encapsuler un autre tag sans générer d'HTML supplémentaire. La balise fragment disparaît lors de l'étape RenderView qui génère le code HTML.</span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">ui:fragment</span><span class="rvts19"> </span><span class="rvts25">rendered</span><span class="rvts18">=</span><span class="rvts26">"#{!empty productController.productId}"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">h2</span><span class="rvts28">&gt;</span><span class="rvts18">Modifier un produit :</span><span class="rvts28">&lt;/</span><span class="rvts24">h2</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">ui:fragment</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38">L'attribut rendered permet de conditionner (true/false) la présence d'un tag dans le code HTML.</span></p>
+<p class="rvps2"><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">Cet attribut permet donc de conditionner l'affichage, mais il faut bien se rappeler qu'il gère</span></p>
+<p class="rvps2"><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">cette présence lors de l'étape RenderView, pas dans la page HTML. Ce n'est donc quelque chose</span></p>
+<p class="rvps2"><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">qu'on ne peut altérer côté client en CSS ou JS, car un élément dont le rendered est à false ne</span></p>
+<p class="rvps2"><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">sera pas du tout dans la page. </span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps5"><span class="rvts28">&lt;</span><span class="rvts24">b:form</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps5"><span class="rvts28">&lt;</span><span class="rvts24">b:inputText</span><span class="rvts19"> </span><span class="rvts25">label</span><span class="rvts18">=</span><span class="rvts26">"Id"</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"#{productController.productId}"</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">rendered</span><span class="rvts18">=</span><span class="rvts26">"#{!empty productController.productId}"</span></p>
+<p class="rvps2"><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">readonly</span><span class="rvts18">=</span><span class="rvts26">"true"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38">Ce champ n'est visible qu'en édition est n'est pas modifiable (readonly).</span></p>
+<p class="rvps2"><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">Il existe en CSS un sélecteur ':read-only' qui permet de modifier facilement le style. </span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps5"><span class="rvts28">&lt;</span><span class="rvts24">b:inputText</span><span class="rvts19"> </span><span class="rvts25">label</span><span class="rvts18">=</span><span class="rvts26">"Intitulé"</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"#{productBean.intitule}"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">f:validateRequired</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">b:inputText</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">b:inputText</span><span class="rvts19"> </span><span class="rvts25">type</span><span class="rvts18">=</span><span class="rvts26">"number"</span><span class="rvts19"> </span><span class="rvts25">label</span><span class="rvts18">=</span><span class="rvts26">"Poids"</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"#{productBean.poids}"</span><span class="rvts28">&gt;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38">Rend la saisie du champ obligatoire. </span></p>
+<p class="rvps2"><span class="rvts28"><br/></span></p>
+</td>
+</tr>
+<tr valign="top">
+<td width="593" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38"><br/></span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">f:validateRequired</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">f:validateDoubleRange</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">b:inputText</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">b:inputText</span><span class="rvts19"> </span><span class="rvts25">label</span><span class="rvts18">=</span><span class="rvts26">"Référence (unique)"</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"#{productBean.reference}"</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">f:validateRequired</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">f:validateLength</span><span class="rvts19"> </span><span class="rvts25">minimum</span><span class="rvts18">=</span><span class="rvts26">"3"</span><span class="rvts19"> </span><span class="rvts25">maximum</span><span class="rvts18">=</span><span class="rvts26">"32"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">b:inputText</span><span class="rvts28">&gt;</span></p>
+<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">b:commandButton</span><span class="rvts19"> </span><span class="rvts25">value</span><span class="rvts18">=</span><span class="rvts26">"Valider"</span><span class="rvts19"> </span><span class="rvts25">action</span><span class="rvts18">=</span><span class="rvts26">"#{productController.save}"</span><span class="rvts19"> </span><span class="rvts28">/&gt;</span></p>
+<p class="rvps2"><span class="rvts28">&lt;/</span><span class="rvts24">b:form</span><span class="rvts28">&gt;</span></p>
+</td>
+<td width="459" style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps2"><span class="rvts38">La saisie doit pouvoir être transformée en float Java. </span></p>
+</td>
+</tr>
+</table>
+</div>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpauthoringsoftware.com/fr">Nouvelles et informations sur les outils de logiciels de création d'aide</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

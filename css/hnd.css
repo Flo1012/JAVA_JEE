@@ -389,35 +389,77 @@ span.rvts69
 }
 span.rvts70
 {
- font-family: 'Consolas';
- color: #7f0055;
-}
-span.rvts71
-{
  font-style: italic;
  color: #808080;
 }
-span.rvts72
+span.rvts71
 {
  font-family: 'Consolas';
- font-style: italic;
- color: #0000c0;
+ color: #7f0055;
+}
+span.rvts72
+{
+ font-size: 14pt;
 }
 span.rvts73
+{
+ font-size: 8pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts74
+{
+ font-size: 8pt;
+ font-family: 'Consolas';
+ color: #0000c0;
+}
+span.rvts75
+{
+ font-size: 8pt;
+ font-family: 'Consolas';
+ font-weight: bold;
+ color: #7f0055;
+}
+span.rvts76
+{
+ font-size: 5pt;
+ font-family: 'Consolas';
+ color: #000000;
+}
+span.rvts77
 {
  font-family: 'Consolas';
  font-weight: bold;
  color: #7f0055;
  background-color: #e8f2fe;
 }
-span.rvts74
+span.rvts78
+{
+ font-family: 'Consolas';
+ font-style: italic;
+ font-weight: bold;
+ color: #0000c0;
+}
+span.rvts79
+{
+ font-family: 'Consolas';
+ color: #3f7f5f;
+ text-decoration: underline;
+}
+span.rvts80
+{
+ font-family: 'Consolas';
+ font-style: italic;
+ color: #0000c0;
+}
+span.rvts81
 {
  font-size: 13pt;
  font-family: 'Consolas';
  font-weight: bold;
  color: #646464;
 }
-span.rvts75
+span.rvts82
 {
  font-size: 14pt;
  font-family: 'Consolas';
@@ -425,11 +467,15 @@ span.rvts75
  font-weight: bold;
  color: #000000;
 }
-span.rvts76
+span.rvts83
 {
  font-family: 'Consolas';
  color: #000000;
  text-decoration: underline;
+}
+span.rvts84
+{
+ color: #000000;
 }
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
@@ -521,6 +567,10 @@ p,ul,ol /* Paragraph Style */
  page-break-after: avoid;
  padding: 0px 0px 0px 0px;
  margin: 16px 0px 4px 0px;
+}
+.rvps15
+{
+ margin: 0px 0px 0px 96px;
 }
 /* ========== Lists ========== */
 .list0 {text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;}
