@@ -475,7 +475,24 @@ span.rvts83
 }
 span.rvts84
 {
+ font-family: 'Consolas';
  color: #000000;
+ background-color: #d4d4d4;
+ text-decoration: underline;
+}
+span.rvts85
+{
+ font-family: 'Consolas';
+ color: #000000;
+ background-color: #d4d4d4;
+}
+span.rvts86
+{
+ color: #000000;
+}
+span.rvts87
+{
+ font-family: 'Arial Unicode MS', 'Lucida Sans Unicode', 'Arial', 'Helvetica', sans-serif;
 }
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
