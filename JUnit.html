@@ -1,0 +1,121 @@
+﻿<html>
+	
+<head>
+	<title>JUnit</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("JUnit");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">JUnit</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="ModeleenV.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="CreationdunprojetMavecviaeclipse.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps2"><span class="rvts6">Dans éclipse,il est possible de lancer les tests soit par :</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">maven : clean package</span></li>
+<li class="rvps2"><span class="rvts6">run as</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" class="rvps2"><span class="rvts6">Découpage important si le 1er foire les autres "foires"</span></li>
+</ol>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="2" class="rvps2"><span class="rvts6">Besoin de préparation de données et libération des ressources</span></li>
+</ol>
+<p class="rvps2"><span class="rvts6">avec setUp et tearDown</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Dans notre projet, Tests effectués sur résultat de la suite.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Documentation Junit : </span><a class="rvts18" href="http://junit.org/junit4/">http://junit.org/junit4/</a></p>
+<p class="rvps2"><span class="rvts6">Junit s'appuie sur </span><span class="rvts37">CoreMatchers</span><span class="rvts6"> , présent dans les imports.</span></p>
+<p class="rvps2"><span class="rvts6">On voit toutes les méthodes qui sont très parlantes.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">La class Assert : vérifie la valeur retour du test OK ou NOK.</span></p>
+<p class="rvps2"><span class="rvts6">ex : assertNotNull, assertEquals / assertSame , </span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Petite parenthèse :</span></p>
+<p class="rvps6"><span class="rvts6">API de réflexion (java.lang.reflect) permet un objet java quels sont les champs et méthode, méthode de classe</span></p>
+<p class="rvps6"><span class="rvts6">Les objets de proxy encapsule, ne connaît pas l'objet à appeler mais vérifie si l’existence de la méthode.</span></p>
+<p class="rvps6"><span class="rvts6">Pour faire des nouvelles classe sans connaître l'implémentation, </span></p>
+<p class="rvps6"><span class="rvts6">JVM =&gt; securityManager peut être actif ou non, renvoie le private ou public des méthodes.</span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts6">Dp4j est un outil Java qui vous permet de tester des méthodes privées comme si elles n'étaient pas privées, car dp4j analysera votre code de test et génèrera le code Java nécessaire pour accéder aux méthodes privées et faire compiler votre test JUnit.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">On peut implémenter des méthodes dans les interfaces.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Si le test est lancer avec Maven :</span></p>
+<p class="rvps2"><span class="rvts6">mvn clean package</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/creer-des-livres-numeriques-epub">Générer des livres électroniques EPub facilement</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -68,115 +68,115 @@
 	<div id="topic_content">
 		
 <p></p>
-<p class="rvps2"><span class="rvts50">&lt;!-- ____________________________________________________________ --&gt;</span></p>
-<p class="rvps2"><span class="rvts50">&lt;!-- Aller sous mvn repository pour copier les repository --&gt;</span></p>
-<p class="rvps2"><span class="rvts50">&lt;!-- Faire alt+F5 pour mettre à jour les libraries dans le projet --&gt;</span></p>
-<p class="rvps2"><span class="rvts50">&lt;!-- Posé à la racine du projet --&gt;</span></p>
-<p class="rvps2"><span class="rvts50">&lt;!-- ____________________________________________________________ --&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">xsi:schemaLocation="http://maven.apache.org/POM/4.0.0</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;groupId&gt;fr.formation&lt;/groupId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;artifactId&gt;cocktailBar&lt;/artifactId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;version&gt;0.0.1&lt;/version&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;packaging&gt;war&lt;/packaging&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;properties&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;/properties&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;dependencies&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api --&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;dependency&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;version&gt;3.1.0&lt;/version&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;/dependency&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl --&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;dependency&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;artifactId&gt;jstl&lt;/artifactId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;version&gt;1.2&lt;/version&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;/dependency&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;dependency&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;version&gt;4.3.4.RELEASE&lt;/version&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;/dependency&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;dependency&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;version&gt;4.3.4.RELEASE&lt;/version&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;/dependency&gt;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts49">&lt;!-- Dépendance à ajouter pour les accés à la base --&gt;</span></p>
-<p class="rvps2"><span class="rvts49"><br/></span></p>
-<p class="rvps2"><span class="rvts49">&lt;!-- 1) "mysql connector" Ajout BDD --&gt;</span></p>
-<p class="rvps2"><span class="rvts18"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">dependency</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">groupId</span><span class="rvts28">&gt;</span><span class="rvts18">mysql</span><span class="rvts28">&lt;/</span><span class="rvts24">groupId</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span><span class="rvts18">mysql-connector-java</span><span class="rvts28">&lt;/</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">version</span><span class="rvts28">&gt;</span><span class="rvts18">5.1.40</span><span class="rvts28">&lt;/</span><span class="rvts24">version</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">dependency</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts49">&lt;!-- 2) "spring data jpa" &nbsp;--&gt;</span></p>
-<p class="rvps2"><span class="rvts49"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">&lt;!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa --&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">dependency</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">groupId</span><span class="rvts28">&gt;</span><span class="rvts18">org.springframework.data</span><span class="rvts28">&lt;/</span><span class="rvts24">groupId</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span><span class="rvts18">spring-data-jpa</span><span class="rvts28">&lt;/</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">version</span><span class="rvts28">&gt;</span><span class="rvts18">1.10.5.RELEASE</span><span class="rvts28">&lt;/</span><span class="rvts24">version</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">dependency</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts49">&lt;!-- 3) "hibernate core" dernière version --&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">&lt;!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core --&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">dependency</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">groupId</span><span class="rvts28">&gt;</span><span class="rvts18">org.hibernate</span><span class="rvts28">&lt;/</span><span class="rvts24">groupId</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span><span class="rvts18">hibernate-core</span><span class="rvts28">&lt;/</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">version</span><span class="rvts28">&gt;</span><span class="rvts18">5.2.5.Final</span><span class="rvts28">&lt;/</span><span class="rvts24">version</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">dependency</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts49">&lt;!-- 4) Copie "hibernate core" changer core en hibernate-entitymanager--&gt;</span></p>
-<p class="rvps2"><span class="rvts18"><br/></span></p>
-<p class="rvps8"><span class="rvts38">&lt;!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core --&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">dependency</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">groupId</span><span class="rvts28">&gt;</span><span class="rvts18">org.hibernate</span><span class="rvts28">&lt;/</span><span class="rvts24">groupId</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span><span class="rvts18">hibernate-entitymanager</span><span class="rvts28">&lt;/</span><span class="rvts24">artifactId</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;</span><span class="rvts24">version</span><span class="rvts28">&gt;</span><span class="rvts18">5.2.5.Final</span><span class="rvts28">&lt;/</span><span class="rvts24">version</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">dependency</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts28">&lt;/</span><span class="rvts24">dependencies</span><span class="rvts28">&gt;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;!-- Configuration des plugins --&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;build&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;plugins&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;plugin&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;version&gt;2.5.1&lt;/version&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;configuration&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;source&gt;1.8&lt;/source&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;target&gt;1.8&lt;/target&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;/configuration&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;/plugin&gt;</span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;/plugins&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts50">&lt;/build&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
-<p class="rvps2"><span class="rvts50">&lt;/project&gt;</span></p>
-<p class="rvps2"><span class="rvts50"><br/></span></p>
+<p class="rvps2"><span class="rvts52">&lt;!-- ____________________________________________________________ --&gt;</span></p>
+<p class="rvps2"><span class="rvts52">&lt;!-- Aller sous mvn repository pour copier les repository --&gt;</span></p>
+<p class="rvps2"><span class="rvts52">&lt;!-- Faire alt+F5 pour mettre à jour les libraries dans le projet --&gt;</span></p>
+<p class="rvps2"><span class="rvts52">&lt;!-- Posé à la racine du projet --&gt;</span></p>
+<p class="rvps2"><span class="rvts52">&lt;!-- ____________________________________________________________ --&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">xsi:schemaLocation="http://maven.apache.org/POM/4.0.0</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;groupId&gt;fr.formation&lt;/groupId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;artifactId&gt;cocktailBar&lt;/artifactId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;version&gt;0.0.1&lt;/version&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;packaging&gt;war&lt;/packaging&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;properties&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;/properties&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;dependencies&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api --&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;dependency&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;version&gt;3.1.0&lt;/version&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;/dependency&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl --&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;dependency&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;artifactId&gt;jstl&lt;/artifactId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;version&gt;1.2&lt;/version&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;/dependency&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;dependency&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;artifactId&gt;spring-context&lt;/artifactId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;version&gt;4.3.4.RELEASE&lt;/version&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;/dependency&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;dependency&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;groupId&gt;org.springframework&lt;/groupId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;version&gt;4.3.4.RELEASE&lt;/version&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;/dependency&gt;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts51">&lt;!-- Dépendance à ajouter pour les accés à la base --&gt;</span></p>
 <p class="rvps2"><span class="rvts51"><br/></span></p>
+<p class="rvps2"><span class="rvts51">&lt;!-- 1) "mysql connector" Ajout BDD --&gt;</span></p>
+<p class="rvps2"><span class="rvts20"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts40">&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">dependency</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">groupId</span><span class="rvts30">&gt;</span><span class="rvts20">mysql</span><span class="rvts30">&lt;/</span><span class="rvts26">groupId</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">artifactId</span><span class="rvts30">&gt;</span><span class="rvts20">mysql-connector-java</span><span class="rvts30">&lt;/</span><span class="rvts26">artifactId</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">version</span><span class="rvts30">&gt;</span><span class="rvts20">5.1.40</span><span class="rvts30">&lt;/</span><span class="rvts26">version</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;/</span><span class="rvts26">dependency</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts51">&lt;!-- 2) "spring data jpa" &nbsp;--&gt;</span></p>
+<p class="rvps2"><span class="rvts51"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts40">&lt;!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa --&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">dependency</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">groupId</span><span class="rvts30">&gt;</span><span class="rvts20">org.springframework.data</span><span class="rvts30">&lt;/</span><span class="rvts26">groupId</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">artifactId</span><span class="rvts30">&gt;</span><span class="rvts20">spring-data-jpa</span><span class="rvts30">&lt;/</span><span class="rvts26">artifactId</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">version</span><span class="rvts30">&gt;</span><span class="rvts20">1.10.5.RELEASE</span><span class="rvts30">&lt;/</span><span class="rvts26">version</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;/</span><span class="rvts26">dependency</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts51">&lt;!-- 3) "hibernate core" dernière version --&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts40">&lt;!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core --&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">dependency</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">groupId</span><span class="rvts30">&gt;</span><span class="rvts20">org.hibernate</span><span class="rvts30">&lt;/</span><span class="rvts26">groupId</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">artifactId</span><span class="rvts30">&gt;</span><span class="rvts20">hibernate-core</span><span class="rvts30">&lt;/</span><span class="rvts26">artifactId</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">version</span><span class="rvts30">&gt;</span><span class="rvts20">5.2.5.Final</span><span class="rvts30">&lt;/</span><span class="rvts26">version</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;/</span><span class="rvts26">dependency</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts51">&lt;!-- 4) Copie "hibernate core" changer core en hibernate-entitymanager--&gt;</span></p>
+<p class="rvps2"><span class="rvts20"><br/></span></p>
+<p class="rvps8"><span class="rvts40">&lt;!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core --&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">dependency</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">groupId</span><span class="rvts30">&gt;</span><span class="rvts20">org.hibernate</span><span class="rvts30">&lt;/</span><span class="rvts26">groupId</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">artifactId</span><span class="rvts30">&gt;</span><span class="rvts20">hibernate-entitymanager</span><span class="rvts30">&lt;/</span><span class="rvts26">artifactId</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;</span><span class="rvts26">version</span><span class="rvts30">&gt;</span><span class="rvts20">5.2.5.Final</span><span class="rvts30">&lt;/</span><span class="rvts26">version</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;/</span><span class="rvts26">dependency</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts30">&lt;/</span><span class="rvts26">dependencies</span><span class="rvts30">&gt;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;!-- Configuration des plugins --&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;build&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;plugins&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;plugin&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;version&gt;2.5.1&lt;/version&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;configuration&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;source&gt;1.8&lt;/source&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;target&gt;1.8&lt;/target&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;/configuration&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;/plugin&gt;</span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;/plugins&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts52">&lt;/build&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts52">&lt;/project&gt;</span></p>
+<p class="rvps2"><span class="rvts52"><br/></span></p>
+<p class="rvps2"><span class="rvts53"><br/></span></p>
 <p></p>
 <p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/outils-creation-aide">Environnement de création d'aide complet</a></p>
 </div>

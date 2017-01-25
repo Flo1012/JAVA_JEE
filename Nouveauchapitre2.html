@@ -68,76 +68,76 @@
 	<div id="topic_content">
 		
 <p></p>
-<p class="rvps2"><span class="rvts17">package</span><span class="rvts18"> fr.formation.gestioncolis.config;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> javax.sql.DataSource;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.hibernate.jpa.HibernatePersistenceProvider;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.beans.factory.annotation.Autowired;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.context.annotation.Bean;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.orm.jpa.JpaTransactionManager;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts43">@EnableWebSecurity</span></p>
-<p class="rvps2"><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">class</span><span class="rvts18"> WebSecurityConfig </span><span class="rvts17">extends</span><span class="rvts18"> WebSecurityConfigurerAdapter {</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@Autowired</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> configureGlobal(</span><span class="rvts17">final</span><span class="rvts18"> AuthenticationManagerBuilder </span><span class="rvts21">auth</span><span class="rvts18">) </span><span class="rvts17">throws</span><span class="rvts18"> Exception {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts21">auth</span><span class="rvts18">.jdbcAuthentication().rolePrefix(</span><span class="rvts20">"ROLE_"</span><span class="rvts18">).dataSource(</span><span class="rvts17">this</span><span class="rvts18">.dataSource())</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">.usersByUsernameQuery(</span><span class="rvts17">this</span><span class="rvts18">.usersByUsername()).authoritiesByUsernameQuery(</span><span class="rvts17">this</span><span class="rvts18">.authentitiesByUsername());</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> String authentitiesByUsername() {</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts20">"SELECT username, upper(role.name) as authority FROM user, role WHERE user.username = ? AND user.roleId = role.id"</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> String usersByUsername() {</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts20">"SELECT USERNAME as username , PASSWORD as password , true FROM user WHERE username = ?"</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// pas </span><span class="rvts79">de</span><span class="rvts42"> role </span><span class="rvts79">dans</span><span class="rvts42"> </span><span class="rvts79">la</span><span class="rvts42"> BDD </span><span class="rvts79">mais</span><span class="rvts42"> </span><span class="rvts79">dans</span><span class="rvts42"> spring </span><span class="rvts79">oui</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// Configuration à </span><span class="rvts79">la</span><span class="rvts42"> </span><span class="rvts79">bbd</span><span class="rvts42"> pour Spring</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@Bean</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> DataSource dataSource() {</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">final</span><span class="rvts18"> JndiDataSourceLookup </span><span class="rvts21">nslookup</span><span class="rvts18"> = </span><span class="rvts17">new</span><span class="rvts18"> JndiDataSourceLookup();</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts21">nslookup</span><span class="rvts18">.setResourceRef(</span><span class="rvts17">true</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts21">nslookup</span><span class="rvts18">.getDataSource(</span><span class="rvts20">"jdbc/gestioncolis"</span><span class="rvts18">); </span><span class="rvts42">// Par </span><span class="rvts79">defaut</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// java:comp/</span><span class="rvts79">env</span><span class="rvts42">/</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// set resourceRef à</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// true</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@Bean</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> LocalContainerEntityManagerFactoryBean entityManagerFactory() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">final</span><span class="rvts18"> LocalContainerEntityManagerFactoryBean </span><span class="rvts21">factory</span><span class="rvts18"> = </span><span class="rvts17">new</span><span class="rvts18"> LocalContainerEntityManagerFactoryBean();</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// </span><span class="rvts79">Notre</span><span class="rvts42"> provider </span><span class="rvts79">est</span><span class="rvts42"> </span><span class="rvts79">hibernet</span><span class="rvts42"> </span><span class="rvts79">donc</span><span class="rvts42"> : ...</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts21">factory</span><span class="rvts18">.setPersistenceProvider(</span><span class="rvts17">new</span><span class="rvts18"> HibernatePersistenceProvider());</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts21">factory</span><span class="rvts18">.setPackagesToScan(</span><span class="rvts20">"fr.formation.gestioncolis.entity"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts21">factory</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@Bean</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> JpaTransactionManager transactionManager() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">final</span><span class="rvts18"> JpaTransactionManager </span><span class="rvts21">transaction</span><span class="rvts18"> = </span><span class="rvts17">new</span><span class="rvts18"> JpaTransactionManager();</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts21">transaction</span><span class="rvts18">.setEntityManagerFactory(</span><span class="rvts17">this</span><span class="rvts18">.entityManagerFactory().getObject());</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts21">transaction</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts27"><br/></span></p>
-<p class="rvps2"><span class="rvts27">hocon </span></p>
+<p class="rvps2"><span class="rvts19">package</span><span class="rvts20"> fr.formation.gestioncolis.config;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> javax.sql.DataSource;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.hibernate.jpa.HibernatePersistenceProvider;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.beans.factory.annotation.Autowired;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.context.annotation.Bean;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.orm.jpa.JpaTransactionManager;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts45">@EnableWebSecurity</span></p>
+<p class="rvps2"><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">class</span><span class="rvts20"> WebSecurityConfig </span><span class="rvts19">extends</span><span class="rvts20"> WebSecurityConfigurerAdapter {</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@Autowired</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> configureGlobal(</span><span class="rvts19">final</span><span class="rvts20"> AuthenticationManagerBuilder </span><span class="rvts23">auth</span><span class="rvts20">) </span><span class="rvts19">throws</span><span class="rvts20"> Exception {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts23">auth</span><span class="rvts20">.jdbcAuthentication().rolePrefix(</span><span class="rvts22">"ROLE_"</span><span class="rvts20">).dataSource(</span><span class="rvts19">this</span><span class="rvts20">.dataSource())</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">.usersByUsernameQuery(</span><span class="rvts19">this</span><span class="rvts20">.usersByUsername()).authoritiesByUsernameQuery(</span><span class="rvts19">this</span><span class="rvts20">.authentitiesByUsername());</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> String authentitiesByUsername() {</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts22">"SELECT username, upper(role.name) as authority FROM user, role WHERE user.username = ? AND user.roleId = role.id"</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> String usersByUsername() {</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts22">"SELECT USERNAME as username , PASSWORD as password , true FROM user WHERE username = ?"</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// pas </span><span class="rvts81">de</span><span class="rvts44"> role </span><span class="rvts81">dans</span><span class="rvts44"> </span><span class="rvts81">la</span><span class="rvts44"> BDD </span><span class="rvts81">mais</span><span class="rvts44"> </span><span class="rvts81">dans</span><span class="rvts44"> spring </span><span class="rvts81">oui</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// Configuration à </span><span class="rvts81">la</span><span class="rvts44"> </span><span class="rvts81">bbd</span><span class="rvts44"> pour Spring</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@Bean</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> DataSource dataSource() {</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">final</span><span class="rvts20"> JndiDataSourceLookup </span><span class="rvts23">nslookup</span><span class="rvts20"> = </span><span class="rvts19">new</span><span class="rvts20"> JndiDataSourceLookup();</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts23">nslookup</span><span class="rvts20">.setResourceRef(</span><span class="rvts19">true</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts23">nslookup</span><span class="rvts20">.getDataSource(</span><span class="rvts22">"jdbc/gestioncolis"</span><span class="rvts20">); </span><span class="rvts44">// Par </span><span class="rvts81">defaut</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// java:comp/</span><span class="rvts81">env</span><span class="rvts44">/</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// set resourceRef à</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// true</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@Bean</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> LocalContainerEntityManagerFactoryBean entityManagerFactory() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">final</span><span class="rvts20"> LocalContainerEntityManagerFactoryBean </span><span class="rvts23">factory</span><span class="rvts20"> = </span><span class="rvts19">new</span><span class="rvts20"> LocalContainerEntityManagerFactoryBean();</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// </span><span class="rvts81">Notre</span><span class="rvts44"> provider </span><span class="rvts81">est</span><span class="rvts44"> </span><span class="rvts81">hibernet</span><span class="rvts44"> </span><span class="rvts81">donc</span><span class="rvts44"> : ...</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts23">factory</span><span class="rvts20">.setPersistenceProvider(</span><span class="rvts19">new</span><span class="rvts20"> HibernatePersistenceProvider());</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts23">factory</span><span class="rvts20">.setPackagesToScan(</span><span class="rvts22">"fr.formation.gestioncolis.entity"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts23">factory</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@Bean</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> JpaTransactionManager transactionManager() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">final</span><span class="rvts20"> JpaTransactionManager </span><span class="rvts23">transaction</span><span class="rvts20"> = </span><span class="rvts19">new</span><span class="rvts20"> JpaTransactionManager();</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts23">transaction</span><span class="rvts20">.setEntityManagerFactory(</span><span class="rvts19">this</span><span class="rvts20">.entityManagerFactory().getObject());</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts23">transaction</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts29"><br/></span></p>
+<p class="rvps2"><span class="rvts29">hocon </span></p>
 <p></p>
 <p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/outils-creation-aide">Outils facile d'utilisation pour créer des aides HTML et des sites web</a></p>
 </div>

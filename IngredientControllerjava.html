@@ -68,36 +68,36 @@
 	<div id="topic_content">
 		
 <p></p>
-<p class="rvps2"><span class="rvts17">package</span><span class="rvts18"> fr.formation.CONTROLLER;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.beans.factory.annotation.Autowired;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.stereotype.Controller;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.web.bind.annotation.RequestMapping;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.springframework.web.servlet.ModelAndView;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> fr.formation.service.IngredientService;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts43">@Controller</span></p>
-<p class="rvps2"><span class="rvts43">@RequestMapping</span><span class="rvts18">(</span><span class="rvts20">"/ingredients"</span><span class="rvts18">)</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">class</span><span class="rvts18"> IngredientController {</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@Autowired</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> IngredientService </span><span class="rvts44">service</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@RequestMapping</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> ModelAndView list() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">final</span><span class="rvts18"> ModelAndView </span><span class="rvts21">mav</span><span class="rvts18"> = </span><span class="rvts17">new</span><span class="rvts18"> ModelAndView();</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts21">mav</span><span class="rvts18">.setViewName(</span><span class="rvts20">"ingredients"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts21">mav</span><span class="rvts18">.addObject(</span><span class="rvts20">"ingredients"</span><span class="rvts18">, </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">service</span><span class="rvts18">.getAll());</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts21">mav</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-<p class="rvps2"><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts27"><br/></span></p>
+<p class="rvps2"><span class="rvts19">package</span><span class="rvts20"> fr.formation.CONTROLLER;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.beans.factory.annotation.Autowired;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.stereotype.Controller;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.web.bind.annotation.RequestMapping;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.springframework.web.servlet.ModelAndView;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> fr.formation.service.IngredientService;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts45">@Controller</span></p>
+<p class="rvps2"><span class="rvts45">@RequestMapping</span><span class="rvts20">(</span><span class="rvts22">"/ingredients"</span><span class="rvts20">)</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">class</span><span class="rvts20"> IngredientController {</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@Autowired</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> IngredientService </span><span class="rvts46">service</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@RequestMapping</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> ModelAndView list() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">final</span><span class="rvts20"> ModelAndView </span><span class="rvts23">mav</span><span class="rvts20"> = </span><span class="rvts19">new</span><span class="rvts20"> ModelAndView();</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts23">mav</span><span class="rvts20">.setViewName(</span><span class="rvts22">"ingredients"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts23">mav</span><span class="rvts20">.addObject(</span><span class="rvts22">"ingredients"</span><span class="rvts20">, </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">service</span><span class="rvts20">.getAll());</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts23">mav</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts29"><br/></span></p>
 <p></p>
 <p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/tour-des-fonctionnalites/creer-ebooks-pour-kindle-amazon">Générer facilement des livres électroniques Kindle</a></p>
 </div>

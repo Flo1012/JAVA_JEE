@@ -64,195 +64,195 @@
 	<div id="topic_content">
 		
 <p></p>
-<p class="rvps2"><span class="rvts17">package</span><span class="rvts18"> fr.formation.gestioncolis.controller;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> java.io.Serializable;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> java.util.ArrayList;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> java.util.List;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> java.util.stream.Collectors;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> javax.annotation.PostConstruct;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> javax.faces.bean.ManagedBean;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> javax.faces.bean.ManagedProperty;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> javax.faces.view.ViewScoped;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> javax.persistence.Transient;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.slf4j.Logger;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> org.slf4j.LoggerFactory;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> fr.formation.gestioncolis.bean.CommandeBean;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> fr.formation.gestioncolis.bean.LiasseBean;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> fr.formation.gestioncolis.dao.CommandeDao;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> fr.formation.gestioncolis.dao.LiasseDao;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> fr.formation.gestioncolis.entity.Commande;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> fr.formation.gestioncolis.entity.Liasse;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> fr.formation.gestioncolis.exception.CreateEntityException;</span></p>
-<p class="rvps2"><span class="rvts17">import</span><span class="rvts18"> net.bootsfaces.utils.FacesMessages;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts43">@ManagedBean</span></p>
-<p class="rvps2"><span class="rvts43">@ViewScoped</span></p>
-<p class="rvps2"><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">class</span><span class="rvts18"> LiasseController </span><span class="rvts17">implements</span><span class="rvts18"> Serializable {</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> </span><span class="rvts17">static</span><span class="rvts18"> </span><span class="rvts17">final</span><span class="rvts18"> Logger </span><span class="rvts78">LOGGER</span><span class="rvts18"> = LoggerFactory.</span><span class="rvts67">getLogger</span><span class="rvts18">(EtatController.</span><span class="rvts17">class</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> </span><span class="rvts17">static</span><span class="rvts18"> </span><span class="rvts17">final</span><span class="rvts18"> </span><span class="rvts17">long</span><span class="rvts18"> </span><span class="rvts78">serialVersionUID</span><span class="rvts18"> = 1L;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> Integer </span><span class="rvts44">liasseId</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// Injection </span><span class="rvts79">de</span><span class="rvts42"> </span><span class="rvts79">dépendance</span><span class="rvts42"> ;-) </span><span class="rvts79">Merci</span><span class="rvts42"> </span><span class="rvts79">Jérémy</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@ManagedProperty</span><span class="rvts18">(</span><span class="rvts20">"#{liasseBean}"</span><span class="rvts18">)</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> LiasseBean </span><span class="rvts44">liasseBean</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@ManagedProperty</span><span class="rvts18">(</span><span class="rvts20">"#{liasseDao}"</span><span class="rvts18">)</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> LiasseDao </span><span class="rvts44">liasseDao</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> List&lt;Liasse&gt; </span><span class="rvts44">liasses</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@ManagedProperty</span><span class="rvts18">(</span><span class="rvts20">"#{commandeDao}"</span><span class="rvts18">)</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> CommandeDao </span><span class="rvts44">commandeDao</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@ManagedProperty</span><span class="rvts18">(</span><span class="rvts20">"#{commadeBean}"</span><span class="rvts18">)</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> CommandeBean </span><span class="rvts44">commandeBean</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@Transient</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// private Map&lt;String, String&gt; natures;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> List&lt;String&gt; </span><span class="rvts44">natures</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> List&lt;Commande&gt; </span><span class="rvts44">readAllCommande</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">private</span><span class="rvts18"> List&lt;Integer&gt; </span><span class="rvts44">readAllIdCommande</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// ------------------------------------------------------------------------------------------------------------</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts43">@PostConstruct</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> _init() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">LiasseController.</span><span class="rvts78">LOGGER</span><span class="rvts18">.debug(</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">"\n[LOG LiasseController] ********** Chargement de la liste des liasses et des natures **********"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasses</span><span class="rvts18"> = </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseDao</span><span class="rvts18">.readAll();</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">natures</span><span class="rvts18"> = </span><span class="rvts17">new</span><span class="rvts18"> ArrayList&lt;&gt;();</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">natures</span><span class="rvts18">.add(</span><span class="rvts20">"Cadeaux"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">natures</span><span class="rvts18">.add(</span><span class="rvts20">"Document"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">natures</span><span class="rvts18">.add(</span><span class="rvts20">"Echantillon Commercial"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">natures</span><span class="rvts18">.add(</span><span class="rvts20">"Retour marchandise"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">natures</span><span class="rvts18">.add(</span><span class="rvts20">"Autres"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">readAllCommande</span><span class="rvts18"> = </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">commandeDao</span><span class="rvts18">.readAll();</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
+<p class="rvps2"><span class="rvts19">package</span><span class="rvts20"> fr.formation.gestioncolis.controller;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> java.io.Serializable;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> java.util.ArrayList;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> java.util.List;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> java.util.stream.Collectors;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> javax.annotation.PostConstruct;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> javax.faces.bean.ManagedBean;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> javax.faces.bean.ManagedProperty;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> javax.faces.view.ViewScoped;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> javax.persistence.Transient;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.slf4j.Logger;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> org.slf4j.LoggerFactory;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> fr.formation.gestioncolis.bean.CommandeBean;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> fr.formation.gestioncolis.bean.LiasseBean;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> fr.formation.gestioncolis.dao.CommandeDao;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> fr.formation.gestioncolis.dao.LiasseDao;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> fr.formation.gestioncolis.entity.Commande;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> fr.formation.gestioncolis.entity.Liasse;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> fr.formation.gestioncolis.exception.CreateEntityException;</span></p>
+<p class="rvps2"><span class="rvts19">import</span><span class="rvts20"> net.bootsfaces.utils.FacesMessages;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts45">@ManagedBean</span></p>
+<p class="rvps2"><span class="rvts45">@ViewScoped</span></p>
+<p class="rvps2"><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">class</span><span class="rvts20"> LiasseController </span><span class="rvts19">implements</span><span class="rvts20"> Serializable {</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> </span><span class="rvts19">static</span><span class="rvts20"> </span><span class="rvts19">final</span><span class="rvts20"> Logger </span><span class="rvts80">LOGGER</span><span class="rvts20"> = LoggerFactory.</span><span class="rvts69">getLogger</span><span class="rvts20">(EtatController.</span><span class="rvts19">class</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> </span><span class="rvts19">static</span><span class="rvts20"> </span><span class="rvts19">final</span><span class="rvts20"> </span><span class="rvts19">long</span><span class="rvts20"> </span><span class="rvts80">serialVersionUID</span><span class="rvts20"> = 1L;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> Integer </span><span class="rvts46">liasseId</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// Injection </span><span class="rvts81">de</span><span class="rvts44"> </span><span class="rvts81">dépendance</span><span class="rvts44"> ;-) </span><span class="rvts81">Merci</span><span class="rvts44"> </span><span class="rvts81">Jérémy</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@ManagedProperty</span><span class="rvts20">(</span><span class="rvts22">"#{liasseBean}"</span><span class="rvts20">)</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> LiasseBean </span><span class="rvts46">liasseBean</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@ManagedProperty</span><span class="rvts20">(</span><span class="rvts22">"#{liasseDao}"</span><span class="rvts20">)</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> LiasseDao </span><span class="rvts46">liasseDao</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> List&lt;Liasse&gt; </span><span class="rvts46">liasses</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@ManagedProperty</span><span class="rvts20">(</span><span class="rvts22">"#{commandeDao}"</span><span class="rvts20">)</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> CommandeDao </span><span class="rvts46">commandeDao</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@ManagedProperty</span><span class="rvts20">(</span><span class="rvts22">"#{commadeBean}"</span><span class="rvts20">)</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> CommandeBean </span><span class="rvts46">commandeBean</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@Transient</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// private Map&lt;String, String&gt; natures;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> List&lt;String&gt; </span><span class="rvts46">natures</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> List&lt;Commande&gt; </span><span class="rvts46">readAllCommande</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">private</span><span class="rvts20"> List&lt;Integer&gt; </span><span class="rvts46">readAllIdCommande</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// ------------------------------------------------------------------------------------------------------------</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts45">@PostConstruct</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> _init() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">LiasseController.</span><span class="rvts80">LOGGER</span><span class="rvts20">.debug(</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts22">"\n[LOG LiasseController] ********** Chargement de la liste des liasses et des natures **********"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasses</span><span class="rvts20"> = </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseDao</span><span class="rvts20">.readAll();</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">natures</span><span class="rvts20"> = </span><span class="rvts19">new</span><span class="rvts20"> ArrayList&lt;&gt;();</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">natures</span><span class="rvts20">.add(</span><span class="rvts22">"Cadeaux"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">natures</span><span class="rvts20">.add(</span><span class="rvts22">"Document"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">natures</span><span class="rvts20">.add(</span><span class="rvts22">"Echantillon Commercial"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">natures</span><span class="rvts20">.add(</span><span class="rvts22">"Retour marchandise"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">natures</span><span class="rvts20">.add(</span><span class="rvts22">"Autres"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">readAllCommande</span><span class="rvts20"> = </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">commandeDao</span><span class="rvts20">.readAll();</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
 <div class="rvps2"><table width="100%" border="1" cellpadding="1" cellspacing="2" style="border-color: #000000; border-style: solid; border-spacing: 2px;">
 <tr valign="top">
-<td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps15"><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">readAllIdCommande</span><span class="rvts18"> = </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">readAllCommande</span><span class="rvts18">.stream().map(Commande::getId).collect(Collectors.</span><span class="rvts67">toList</span><span class="rvts18">());</span></p>
+<td style="border-color: #000000; border-style: solid; padding: 1px;"><p class="rvps15"><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">readAllIdCommande</span><span class="rvts20"> = </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">readAllCommande</span><span class="rvts20">.stream().map(Commande::getId).collect(Collectors.</span><span class="rvts69">toList</span><span class="rvts20">());</span></p>
 </td>
 </tr>
 </table>
 </div>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">LiasseController.</span><span class="rvts78">LOGGER</span><span class="rvts18">.debug(</span><span class="rvts20">"\n LiasseController Liste des commandes : "</span><span class="rvts18"> + </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">readAllCommande</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// ------------------------------------------------------------------------------------------------------------</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> save() {</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">LiasseController.</span><span class="rvts78">LOGGER</span><span class="rvts18">.debug(</span><span class="rvts20">"\n********** [INFO-LiasseController] Sauvegarde de liasseBean en BDD. **********"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">FacesMessages.</span><span class="rvts67">info</span><span class="rvts18">(</span><span class="rvts20">"\n********** [INFO-LiasseController] Ecrire la méthode save() servant à sauvegarder la liasse saisie dans vue create de liasse."</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">if</span><span class="rvts18"> (</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseBean</span><span class="rvts18">.getId() == </span><span class="rvts17">null</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">try</span><span class="rvts18"> {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">final</span><span class="rvts18"> Liasse </span><span class="rvts21">liasse</span><span class="rvts18"> = </span><span class="rvts17">new</span><span class="rvts18"> Liasse();</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseDao</span><span class="rvts18">.create(</span><span class="rvts21">liasse</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">FacesMessages.</span><span class="rvts67">info</span><span class="rvts18">(</span><span class="rvts20">"Nouvelle liasse sur la commande'"</span><span class="rvts18"> + </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseBean</span><span class="rvts18">.getCommandeBean().getId()</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">+ </span><span class="rvts20">"' créée avec succès."</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">} </span><span class="rvts17">catch</span><span class="rvts18"> (</span><span class="rvts17">final</span><span class="rvts18"> CreateEntityException </span><span class="rvts21">e</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">LiasseController.</span><span class="rvts78">LOGGER</span><span class="rvts18">.error(</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">"\n********** [INFO-LiasseController] Erreur pendant la création d'une nouvelle liasse"</span><span class="rvts18">, </span><span class="rvts21">e</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">} </span><span class="rvts17">else</span><span class="rvts18"> {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">FacesMessages.</span><span class="rvts67">info</span><span class="rvts18">(</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">"\n********** [INFO-LiasseController] Lancement de la création d'une liasse en Base de donnée"</span><span class="rvts18">);</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// </span><span class="rvts45">TODO</span><span class="rvts42">: Modification.</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts42">// ------------------------------------------------------------------------------------------------------------</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38">/**</span></p>
-<p class="rvps2"><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> *</span></p>
-<p class="rvps2"><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> * LISTE DES GETTERS SETTERS</span></p>
-<p class="rvps2"><span class="rvts38"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts38"> */</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> LiasseBean getLiasseBean() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseBean</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> Integer getLiasseId() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseId</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> setLiasseId(</span><span class="rvts17">final</span><span class="rvts18"> Integer </span><span class="rvts21">liasseId</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseId</span><span class="rvts18"> = </span><span class="rvts21">liasseId</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> setLiasseBean(</span><span class="rvts17">final</span><span class="rvts18"> LiasseBean </span><span class="rvts21">liasseBean</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseBean</span><span class="rvts18"> = </span><span class="rvts21">liasseBean</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> LiasseDao getLiasseDao() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseDao</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> setLiasseDao(</span><span class="rvts17">final</span><span class="rvts18"> LiasseDao </span><span class="rvts21">liasseDao</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasseDao</span><span class="rvts18"> = </span><span class="rvts21">liasseDao</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> List&lt;Liasse&gt; getLiasses() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasses</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> setLiasses(</span><span class="rvts17">final</span><span class="rvts18"> List&lt;Liasse&gt; </span><span class="rvts21">liasses</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">liasses</span><span class="rvts18"> = </span><span class="rvts21">liasses</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> List&lt;String&gt; getNatures() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">natures</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> setNatures(</span><span class="rvts17">final</span><span class="rvts18"> List&lt;String&gt; </span><span class="rvts21">natures</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">natures</span><span class="rvts18"> = </span><span class="rvts21">natures</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> CommandeDao getCommandeDao() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">commandeDao</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> setCommandeDao(</span><span class="rvts17">final</span><span class="rvts18"> CommandeDao </span><span class="rvts21">commandeDao</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">commandeDao</span><span class="rvts18"> = </span><span class="rvts21">commandeDao</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> List&lt;Commande&gt; getReadAllCommande() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">readAllCommande</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> setReadAllCommande(</span><span class="rvts17">final</span><span class="rvts18"> List&lt;Commande&gt; </span><span class="rvts21">readAllCommande</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">readAllCommande</span><span class="rvts18"> = </span><span class="rvts21">readAllCommande</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> List&lt;Integer&gt; getReadAllIdCommande() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">readAllIdCommande</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> setReadAllIdCommande(</span><span class="rvts17">final</span><span class="rvts18"> List&lt;Integer&gt; </span><span class="rvts21">readAllIdCommande</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">readAllIdCommande</span><span class="rvts18"> = </span><span class="rvts21">readAllIdCommande</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> CommandeBean getCommandeBean() {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">return</span><span class="rvts18"> </span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">commandeBean</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">public</span><span class="rvts18"> </span><span class="rvts17">void</span><span class="rvts18"> setCommandeBean(</span><span class="rvts17">final</span><span class="rvts18"> CommandeBean </span><span class="rvts21">commandeBean</span><span class="rvts18">) {</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts17">this</span><span class="rvts18">.</span><span class="rvts44">commandeBean</span><span class="rvts18"> = </span><span class="rvts21">commandeBean</span><span class="rvts18">;</span></p>
-<p class="rvps2"><span class="rvts18"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts19"><br/></span></p>
-<p class="rvps2"><span class="rvts18">}</span></p>
-<p class="rvps2"><span class="rvts27"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">LiasseController.</span><span class="rvts80">LOGGER</span><span class="rvts20">.debug(</span><span class="rvts22">"\n LiasseController Liste des commandes : "</span><span class="rvts20"> + </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">readAllCommande</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// ------------------------------------------------------------------------------------------------------------</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> save() {</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">LiasseController.</span><span class="rvts80">LOGGER</span><span class="rvts20">.debug(</span><span class="rvts22">"\n********** [INFO-LiasseController] Sauvegarde de liasseBean en BDD. **********"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">FacesMessages.</span><span class="rvts69">info</span><span class="rvts20">(</span><span class="rvts22">"\n********** [INFO-LiasseController] Ecrire la méthode save() servant à sauvegarder la liasse saisie dans vue create de liasse."</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">if</span><span class="rvts20"> (</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseBean</span><span class="rvts20">.getId() == </span><span class="rvts19">null</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">try</span><span class="rvts20"> {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">final</span><span class="rvts20"> Liasse </span><span class="rvts23">liasse</span><span class="rvts20"> = </span><span class="rvts19">new</span><span class="rvts20"> Liasse();</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseDao</span><span class="rvts20">.create(</span><span class="rvts23">liasse</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">FacesMessages.</span><span class="rvts69">info</span><span class="rvts20">(</span><span class="rvts22">"Nouvelle liasse sur la commande'"</span><span class="rvts20"> + </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseBean</span><span class="rvts20">.getCommandeBean().getId()</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">+ </span><span class="rvts22">"' créée avec succès."</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">} </span><span class="rvts19">catch</span><span class="rvts20"> (</span><span class="rvts19">final</span><span class="rvts20"> CreateEntityException </span><span class="rvts23">e</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">LiasseController.</span><span class="rvts80">LOGGER</span><span class="rvts20">.error(</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts22">"\n********** [INFO-LiasseController] Erreur pendant la création d'une nouvelle liasse"</span><span class="rvts20">, </span><span class="rvts23">e</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">} </span><span class="rvts19">else</span><span class="rvts20"> {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">FacesMessages.</span><span class="rvts69">info</span><span class="rvts20">(</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts22">"\n********** [INFO-LiasseController] Lancement de la création d'une liasse en Base de donnée"</span><span class="rvts20">);</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// </span><span class="rvts47">TODO</span><span class="rvts44">: Modification.</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts44">// ------------------------------------------------------------------------------------------------------------</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts40">/**</span></p>
+<p class="rvps2"><span class="rvts40"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts40"> *</span></p>
+<p class="rvps2"><span class="rvts40"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts40"> * LISTE DES GETTERS SETTERS</span></p>
+<p class="rvps2"><span class="rvts40"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts40"> */</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> LiasseBean getLiasseBean() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseBean</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> Integer getLiasseId() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseId</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> setLiasseId(</span><span class="rvts19">final</span><span class="rvts20"> Integer </span><span class="rvts23">liasseId</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseId</span><span class="rvts20"> = </span><span class="rvts23">liasseId</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> setLiasseBean(</span><span class="rvts19">final</span><span class="rvts20"> LiasseBean </span><span class="rvts23">liasseBean</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseBean</span><span class="rvts20"> = </span><span class="rvts23">liasseBean</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> LiasseDao getLiasseDao() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseDao</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> setLiasseDao(</span><span class="rvts19">final</span><span class="rvts20"> LiasseDao </span><span class="rvts23">liasseDao</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasseDao</span><span class="rvts20"> = </span><span class="rvts23">liasseDao</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> List&lt;Liasse&gt; getLiasses() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasses</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> setLiasses(</span><span class="rvts19">final</span><span class="rvts20"> List&lt;Liasse&gt; </span><span class="rvts23">liasses</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">liasses</span><span class="rvts20"> = </span><span class="rvts23">liasses</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> List&lt;String&gt; getNatures() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">natures</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> setNatures(</span><span class="rvts19">final</span><span class="rvts20"> List&lt;String&gt; </span><span class="rvts23">natures</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">natures</span><span class="rvts20"> = </span><span class="rvts23">natures</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> CommandeDao getCommandeDao() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">commandeDao</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> setCommandeDao(</span><span class="rvts19">final</span><span class="rvts20"> CommandeDao </span><span class="rvts23">commandeDao</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">commandeDao</span><span class="rvts20"> = </span><span class="rvts23">commandeDao</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> List&lt;Commande&gt; getReadAllCommande() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">readAllCommande</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> setReadAllCommande(</span><span class="rvts19">final</span><span class="rvts20"> List&lt;Commande&gt; </span><span class="rvts23">readAllCommande</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">readAllCommande</span><span class="rvts20"> = </span><span class="rvts23">readAllCommande</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> List&lt;Integer&gt; getReadAllIdCommande() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">readAllIdCommande</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> setReadAllIdCommande(</span><span class="rvts19">final</span><span class="rvts20"> List&lt;Integer&gt; </span><span class="rvts23">readAllIdCommande</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">readAllIdCommande</span><span class="rvts20"> = </span><span class="rvts23">readAllIdCommande</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> CommandeBean getCommandeBean() {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">return</span><span class="rvts20"> </span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">commandeBean</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">public</span><span class="rvts20"> </span><span class="rvts19">void</span><span class="rvts20"> setCommandeBean(</span><span class="rvts19">final</span><span class="rvts20"> CommandeBean </span><span class="rvts23">commandeBean</span><span class="rvts20">) {</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">this</span><span class="rvts20">.</span><span class="rvts46">commandeBean</span><span class="rvts20"> = </span><span class="rvts23">commandeBean</span><span class="rvts20">;</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20">}</span></p>
+<p class="rvps2"><span class="rvts29"><br/></span></p>
 <p></p>
 <p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/creer-des-livres-numeriques-epub">Produire des livres EPub gratuitement</a></p>
 </div>

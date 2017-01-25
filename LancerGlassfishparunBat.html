@@ -1,0 +1,132 @@
+﻿<html>
+	
+<head>
+	<title>Lancer Glassfish par un Bat</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "JAVA JEE.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("LancerGlassfishparunBat");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Lancer Glassfish par un Bat</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="GlassFish.html">GlassFish</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="GlassFish.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="SchemadesERROREXCEPTION.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="ListedestutosdonnesparJeremy.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" class="rvps2"><span class="rvts6">Créer un répertoire scripts sous le workspace d'éclipse</span></li>
+</ol>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="2" class="rvps2"><span class="rvts6">Créer un fichier gl.bat :</span></li>
+</ol>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts45">@</span><span class="rvts20">echo off</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> Set GLASSFISH_PATH=C:\Users\hb-asus\Documents\Install\glassfish4</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts19">if</span><span class="rvts20"> </span><span class="rvts22">"%1"</span><span class="rvts20"> == </span><span class="rvts22">"start"</span><span class="rvts20"> (</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">echo [INFO] Starting Glassfish</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">call %GLASSFISH_PATH\bin\asadmin start-domain</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">goto</span><span class="rvts20"> end</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">)</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts19">if</span><span class="rvts20"> </span><span class="rvts22">"%1"</span><span class="rvts20"> == </span><span class="rvts22">"stop"</span><span class="rvts20"> (</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">echo [INFO] Stopping Glassfish</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">call %GLASSFISH_PATH\bin\asadmin stop-domain</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">goto</span><span class="rvts20"> end</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">)</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts19">if</span><span class="rvts20"> </span><span class="rvts22">"%1"</span><span class="rvts20"> == </span><span class="rvts22">""</span><span class="rvts20"> (</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">echo [INFO] Il manque un argument</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> ) </span><span class="rvts19">else</span><span class="rvts20"> (</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">echo [INFO] Il manque un argument</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20">)</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> :end</span></p>
+<p class="rvps2"><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts20"> </span><span class="rvts45">@</span><span class="rvts20">echo on</span></p>
+<p class="rvps2"><span class="rvts20"><br/></span></p>
+<p class="rvps2"><span class="rvts20"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;">
+<li value="3" class="rvps2"><span class="rvts20">Créer une variable d'environnement</span></li>
+</ol>
+<p class="rvps6"><span class="rvts20"><br/></span></p>
+<p class="rvps6"><span class="rvts20">Sous windows : </span></p>
+<p class="rvps9"><span class="rvts20">Win + Pause</span></p>
+<p class="rvps9"><span class="rvts20">Paramètres système avancés</span></p>
+<p class="rvps9"><span class="rvts20">Variables d'environnement</span></p>
+<p class="rvps9"><span class="rvts20"><br/></span></p>
+<p class="rvps9"><span class="rvts20"><br/></span></p>
+<p class="rvps9"><img alt="" style="padding : 1px;" src="lib/NouvelElement43.png"></p>
+<p class="rvps9"><span class="rvts20">Détail supplémentaire pour la variable Path</span></p>
+<p class="rvps9"><span class="rvts20"><br/></span></p>
+<p class="rvps9"><img alt="" style="padding : 1px;" src="lib/NouvelElement42.png"></p>
+<p></p>
+<p class="rvps4"><span class="rvts14">Créé avec HelpNDoc Personal Edition: </span><a class="rvts15" href="http://www.helpndoc.com/fr/tour-des-fonctionnalites">Créer des documents d'aide PDF facilement</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; D&eacute;cembre 2017 by Flo</div>
+		</div>
+	</body>
+	
+</html>
+

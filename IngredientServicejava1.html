@@ -79,17 +79,17 @@
 <p class="rvps2"><span class="rvts6">import fr.formation.DAO.IngredientDAO;</span></p>
 <p class="rvps2"><span class="rvts6">import fr.formation.entity.Ingredient;</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts35">@Service</span></p>
+<p class="rvps2"><span class="rvts37">@Service</span></p>
 <p class="rvps2"><span class="rvts6">public class IngredientService {</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts35">@Autowired</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts37">@Autowired</span></p>
 <p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">private IngredientDAO dao;</span></p>
 <p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 <p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">public List&lt;Ingredient&gt; getAll(){</span></p>
 <p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">return this.dao.findAll();</span></p>
 <p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 <p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">}</span></p>
-<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts35">@Transactional</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts37">@Transactional</span></p>
 <p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">public Ingredient create(final Ingredient ingredient){</span></p>
 <p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">return this.dao.save(ingredient);</span></p>
 <p class="rvps2"><span class="rvts6"></span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">}</span></p>
